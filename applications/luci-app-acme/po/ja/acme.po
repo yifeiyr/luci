@@ -19,7 +19,7 @@ msgstr "ACME証明書"
 msgid "ACME global config"
 msgstr "ACMEグローバル設定"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:514
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:515
 msgid "ACME server URL"
 msgstr "ACMEサーバーのURL"
 
@@ -43,7 +43,7 @@ msgstr ""
 msgid "Certificate config"
 msgstr "証明書設定"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:605
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:606
 msgid "Certificates"
 msgstr ""
 
@@ -51,11 +51,7 @@ msgstr ""
 msgid "Challenge Alias"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:509
-msgid "Custom ACME CA"
-msgstr "カスタムACME CA"
-
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:515
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:516
 msgid "Custom ACME server directory URL."
 msgstr "カスタムACMEサーバーディレクトリのURL。"
 
@@ -75,7 +71,7 @@ msgstr "DNS API資格情報"
 msgid "DNS Challenge Validation"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:521
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:522
 msgid "Days until renewal"
 msgstr "更新までの日数"
 
@@ -106,11 +102,11 @@ msgid ""
 "code>"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:482
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:489
 msgid "ECC 256 bits"
 msgstr "ECC256ビット"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:483
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:490
 msgid "ECC 384 bits"
 msgstr "ECC384ビット"
 
@@ -130,7 +126,7 @@ msgstr "有効"
 msgid "General Settings"
 msgstr "一般設定"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:469
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:476
 msgid ""
 "Get certificate from the Letsencrypt staging server (use for testing; the "
 "certificate won't be valid)."
@@ -148,19 +144,19 @@ msgid ""
 "days before expiry."
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:587
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:588
 msgid "Issued on"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:477
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:484
 msgid "Key size (and type) for the generated certificate."
 msgstr "生成された証明書の鍵の大きさ(およびタイプ)。"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:476
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:483
 msgid "Key type"
 msgstr "鍵の大きさ"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:584
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:585
 msgid "Main Domain"
 msgstr ""
 
@@ -181,28 +177,36 @@ msgstr ""
 msgid "Path to private API signing key file in PEM format"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:585
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:586
 msgid "Private Key"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:586
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:587
 msgid "Public Certificate"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:479
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:486
 msgid "RSA 2048 bits"
 msgstr "RSA2048ビット"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:480
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:487
 msgid "RSA 3072 bits"
 msgstr "RSA3072ビット"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:481
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:488
 msgid "RSA 4096 bits"
 msgstr "RSA4096ビット"
 
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:467
+msgid "Seconds to wait for a DNS record to be updated before continue."
+msgstr ""
+
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:236
 msgid "See instructions"
+msgstr ""
+
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:468
+msgid "See more"
 msgstr ""
 
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:375
@@ -274,16 +278,20 @@ msgid ""
 "package to be installed."
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:509
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:516
 msgid "Use a custom CA instead of Let's Encrypt."
 msgstr "Let'sEncryptの代わりにカスタムCAを使用する。"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:467
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:474
 msgid "Use staging server"
 msgstr "ステージングサーバーを使用"
 
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:68
 msgid "Validation method"
+msgstr ""
+
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:466
+msgid "Wait for DNS update"
 msgstr ""
 
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:73
@@ -304,3 +312,6 @@ msgid ""
 "Acme in webroot mode. The web server must be accessible from the internet on "
 "port 80."
 msgstr ""
+
+#~ msgid "Custom ACME CA"
+#~ msgstr "カスタムACME CA"

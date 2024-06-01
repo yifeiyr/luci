@@ -19,7 +19,7 @@ msgstr "Chứng chỉ ACME"
 msgid "ACME global config"
 msgstr "Cấu hình ACME toàn cầu"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:514
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:515
 msgid "ACME server URL"
 msgstr "Đường dẫn máy chủ ACME"
 
@@ -43,7 +43,7 @@ msgstr ""
 msgid "Certificate config"
 msgstr "Cấu hình chứng chỉ"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:605
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:606
 msgid "Certificates"
 msgstr ""
 
@@ -51,11 +51,7 @@ msgstr ""
 msgid "Challenge Alias"
 msgstr "Bí danh"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:509
-msgid "Custom ACME CA"
-msgstr "Tùy chỉnh ACME CA"
-
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:515
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:516
 msgid "Custom ACME server directory URL."
 msgstr "Tùy chỉnh đường dẫn máy chủ ACME."
 
@@ -75,7 +71,7 @@ msgstr "Thông tin đăng nhập DNS API"
 msgid "DNS Challenge Validation"
 msgstr "DNS Thẩm định"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:521
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:522
 msgid "Days until renewal"
 msgstr "Cho đến ngày được làm mới"
 
@@ -107,11 +103,11 @@ msgid ""
 "code>"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:482
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:489
 msgid "ECC 256 bits"
 msgstr "ECC 256 bit"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:483
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:490
 msgid "ECC 384 bits"
 msgstr "ECC 384 bit"
 
@@ -131,7 +127,7 @@ msgstr "Kích Hoạt"
 msgid "General Settings"
 msgstr "Các cài đặt chung"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:469
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:476
 msgid ""
 "Get certificate from the Letsencrypt staging server (use for testing; the "
 "certificate won't be valid)."
@@ -149,19 +145,19 @@ msgid ""
 "days before expiry."
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:587
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:588
 msgid "Issued on"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:477
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:484
 msgid "Key size (and type) for the generated certificate."
 msgstr "Kích thước khóa cho chứng chỉ được tạo."
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:476
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:483
 msgid "Key type"
 msgstr "Kích thước khóa"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:584
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:585
 msgid "Main Domain"
 msgstr ""
 
@@ -182,28 +178,36 @@ msgstr ""
 msgid "Path to private API signing key file in PEM format"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:585
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:586
 msgid "Private Key"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:586
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:587
 msgid "Public Certificate"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:479
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:486
 msgid "RSA 2048 bits"
 msgstr "RSA kích thước 2048 bits"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:480
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:487
 msgid "RSA 3072 bits"
 msgstr "RSA kích thước 3072 bits"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:481
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:488
 msgid "RSA 4096 bits"
 msgstr "RSA kích thước 4096 bits"
 
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:467
+msgid "Seconds to wait for a DNS record to be updated before continue."
+msgstr ""
+
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:236
 msgid "See instructions"
+msgstr ""
+
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:468
+msgid "See more"
 msgstr ""
 
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:375
@@ -298,17 +302,21 @@ msgstr ""
 "nhất hỗ trợ chứng chỉ ký tự đại diện. Sử dụng chế độ này yêu cầu phải cài "
 "đặt gói acme-dnsapi."
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:509
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:516
 msgid "Use a custom CA instead of Let's Encrypt."
 msgstr "Sử dụng tùy chỉnh nhà cung cấp chứng chỉ thay cho Let's Encrypt."
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:467
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:474
 msgid "Use staging server"
 msgstr "Sử dụng máy chủ tạm"
 
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:68
 msgid "Validation method"
 msgstr "Phương thức thẩm định"
+
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:466
+msgid "Wait for DNS update"
+msgstr ""
 
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:73
 msgid "Webroot"
@@ -332,3 +340,5 @@ msgstr ""
 "chạy Acme ở chế độ gốc web. Máy chủ web phải có thể truy cập được từ "
 "internet trên cổng 80."
 
+#~ msgid "Custom ACME CA"
+#~ msgstr "Tùy chỉnh ACME CA"
