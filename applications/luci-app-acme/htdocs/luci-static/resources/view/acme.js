@@ -5,19 +5,24 @@
 'require view';
 
 return view.extend({
-	load: function() {
-		return L.resolveDefault(fs.list('/etc/ssl/acme/'), []).then(function(entries) {
-			var certs = [];
-			for (var i = 0; i < entries.length; i++) {
-				if (entries[i].type == 'file' && entries[i].name.match(/\.key$/)) {
-					certs.push(entries[i]);
+	load: function () {
+		return Promise.all([
+			L.resolveDefault(fs.list('/etc/ssl/acme/'), []).then(function (entries) {
+				var certs = [];
+				for (var i = 0; i < entries.length; i++) {
+					if (entries[i].type == 'file' && entries[i].name.match(/\.key$/)) {
+						certs.push(entries[i]);
+					}
 				}
-			}
-			return certs;
-		});
+				return certs;
+			}),
+			L.resolveDefault(fs.stat('/usr/lib/acme/client/dnsapi'), null),
+		]);
 	},
 
-	render: function (certs) {
+	render: function (data) {
+		let certs = data[0];
+		let hasDnsApi = data[1] != null;
 		let wikiUrl = 'https://github.com/acmesh-official/acme.sh/wiki/';
 		var wikiInstructionUrl = wikiUrl + 'dnsapi';
 		var m, s, o;
@@ -72,6 +77,19 @@ return view.extend({
 		o.value('webroot', _('Webroot'));
 		o.value('dns', _('DNS'));
 		o.default = 'webroot';
+
+		if (!hasDnsApi) {
+			let opkgPackage = 'acme-acmesh-dnsapi';
+			o = s.taboption('general', form.Button, '_install');
+			o.depends('validation_method', 'dns');
+			o.title = _('Package is not installed');
+			o.inputtitle = _('Install package %s').format(opkgPackage);
+			o.inputstyle = 'apply';
+			o.onclick = function () {
+				window.open(L.url('admin/system/opkg') +
+					'?query=' + opkgPackage, '_blank', 'noopener');
+			};
+		}
 
 		o = s.taboption('general', form.DynamicList, "domains", _("Domain names"),
 			_("Domain names to include in the certificate. " +
