@@ -78,6 +78,18 @@ return view.extend({
 				"The first name will be the subject name, subsequent names will be alt names. " +
 				"Note that all domain names must point at the router in the global DNS."));
 		o.datatype = "list(string)";
+		o.validate = function (section_id, value) {
+			if (!/^[*a-z0-9.-]*$/.test(value)) {
+				return _('Invalid domain');
+			}
+			if (value.includes('*')) {
+				let method = this.section.children.filter(function (o) { return o.option == 'validation_method'; })[0].formvalue(section_id);
+				if (method && method !== 'dns') {
+					return _('A domain name with wildcard * available only when the Validation Method: DNS');
+				}
+			}
+			return true;
+		};
 
 		o = s.taboption('challenge_webroot', form.Value, 'webroot', _('Webroot directory'),
 			_("Webserver root directory. Set this to the webserver " +
