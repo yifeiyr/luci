@@ -30,6 +30,9 @@ return view.extend({
 				"point at the router's public IP address. " +
 				"Once configured, issuing certificates can take a while. " +
 				"Check the logs for progress and any errors.") + '<br/>' +
+				_('You can sign certificates for free with:') + '<br/>' +
+				'<a href="https://ZeroSSL.com/" target="_blank">ZeroSSL</a> ' + _('Default') + '<br/>' +
+				'<a href="https://LetsEncrypt.org/" target="_blank">LetsEncrypt</a> ' + '<br/>' +
 				_("Cert files are stored in") + ' <em>/etc/ssl/acme<em>'
 		);
 
