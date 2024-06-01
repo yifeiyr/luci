@@ -524,7 +524,9 @@ return view.extend({
 		};
 
 		o = s.taboption('advanced', form.Value, "acme_server", _("ACME server URL"),
-			_('Use a custom CA.') +	' ' + _('Custom ACME server directory URL.'));
+			_('Use a custom CA.') +	' ' + _('Custom ACME server directory URL.') + '<br />' +
+			'<a href="https://github.com/acmesh-official/acme.sh/wiki/Server" target="_blank">' + _('See more') + '</a>'
+		);
 		o.depends("staging", "0");
 		o.placeholder = "https://api.buypass.com/acme/directory";
 		o.optional = true;
@@ -532,7 +534,7 @@ return view.extend({
 
 		o = s.taboption('advanced', form.Value, 'days', _('Days until renewal'));
 		o.optional    = true;
-		o.placeholder = 90;
+		o.placeholder = 60;
 		o.datatype    = 'uinteger';
 		o.modalonly = true;
 
