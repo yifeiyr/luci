@@ -19,7 +19,7 @@ msgstr "Certificati ACME"
 msgid "ACME global config"
 msgstr "Configurazione globale ACME"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:515
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:523
 msgid "ACME server URL"
 msgstr "URL server ACME"
 
@@ -31,7 +31,7 @@ msgstr "E-mail dell'account"
 msgid "Advanced Settings"
 msgstr "Impostazioni avanzate"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:433
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:435
 msgid "Base64 content of private key. Use instead of YC_SA_Key_File_Path"
 msgstr ""
 "Codice Base64 della chiave privata. Usalo in alternativa a "
@@ -45,15 +45,15 @@ msgstr "I certificati sono salvati in"
 msgid "Certificate config"
 msgstr "Configurazione certificato"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:606
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:614
 msgid "Certificates"
 msgstr "Certificati"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:452
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:456
 msgid "Challenge Alias"
 msgstr "Alias challenge"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:516
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:524
 msgid "Custom ACME server directory URL."
 msgstr "URL personalizzata cartella server ACME."
 
@@ -65,7 +65,7 @@ msgstr "DNS"
 msgid "DNS API"
 msgstr "API DNS"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:444
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:446
 msgid "DNS API credentials"
 msgstr "Credenziali API DNS"
 
@@ -73,7 +73,7 @@ msgstr "Credenziali API DNS"
 msgid "DNS Challenge Validation"
 msgstr "DNS Validazione challenge"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:522
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:530
 msgid "Days until renewal"
 msgstr "giorni al rinnovo"
 
@@ -81,7 +81,7 @@ msgstr "giorni al rinnovo"
 msgid "Default"
 msgstr "Predefinito"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:459
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:465
 msgid "Domain Alias"
 msgstr "Alias di dominio"
 
@@ -99,7 +99,7 @@ msgstr ""
 "soggetto, i successivi saranno nomi alternativi. Nota che tutti i nomi di "
 "dominio devono puntare al router nel DNS globale."
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:410
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:412
 msgid ""
 "E.g. <code>_acme-challenge.example.com:12345:98765 alias.example.com:11111</"
 "code>"
@@ -107,11 +107,11 @@ msgstr ""
 "Es. <code>_acme-challenge.example.com:12345:98765 alias.example.com:11111</"
 "code>"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:489
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:497
 msgid "ECC 256 bits"
 msgstr "ECC 256 bit"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:490
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:498
 msgid "ECC 384 bits"
 msgstr "ECC 384 bit"
 
@@ -131,7 +131,7 @@ msgstr "Abilitato"
 msgid "General Settings"
 msgstr "Impostazioni Generali"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:476
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:484
 msgid ""
 "Get certificate from the Letsencrypt staging server (use for testing; the "
 "certificate won't be valid)."
@@ -151,76 +151,76 @@ msgstr ""
 "Se un certificato non viene rinnovato in tempo, riceverai una notifica 20 "
 "giorni prima della scadenza."
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:588
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:596
 msgid "Issued on"
 msgstr "Emesso il"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:484
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:492
 msgid "Key size (and type) for the generated certificate."
 msgstr "Dimensione chiave (e tipo) per il certificato generato."
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:483
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:491
 msgid "Key type"
 msgstr "Dimensione chiave"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:585
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:593
 msgid "Main Domain"
 msgstr "Dominio Principale"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:369
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:371
 msgid "OCID of tenancy that contains the target DNS zone"
 msgstr ""
 "OCID (Oracle Cloud Identifier) della tenancy che contiene la zona DNS di "
 "destinazione"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:372
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:374
 msgid "OCID of user with permission to add/remove records from zones"
 msgstr ""
 "OCID dell'utente con il permesso di aggiungere/rimuovere i record dalle zone"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:275
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:277
 msgid ""
 "Open <a href=\"https://www.duckdns.org/\">DuckDNS</a> and copy a token here"
 msgstr ""
 "Apri <a href=\"https://www.duckdns.org/\">DuckDNS</a> e copia un token qui"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:378
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:380
 msgid "Path to private API signing key file in PEM format"
 msgstr "Percorso della chiave API privata in formato PEM"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:586
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:594
 msgid "Private Key"
 msgstr "Chiave Privata"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:587
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:595
 msgid "Public Certificate"
 msgstr "Certificato Pubblico"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:486
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:494
 msgid "RSA 2048 bits"
 msgstr "RSA 2048 bit"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:487
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:495
 msgid "RSA 3072 bits"
 msgstr "RSA 3072 bit"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:488
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:496
 msgid "RSA 4096 bits"
 msgstr "RSA 4096 bit"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:467
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:475
 msgid "Seconds to wait for a DNS record to be updated before continue."
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:236
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:238
 msgid "See instructions"
 msgstr "Vedi le istruzioni"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:468
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:476
 msgid "See more"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:375
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:377
 msgid "Should point to the tenancy home region"
 msgstr "Dovrebbe puntare alla regione in cui è ospitato"
 
@@ -240,39 +240,34 @@ msgstr ""
 "emettere un certificato. La modalità DNS ti consentirà di usare l'API DNS "
 "del tuo provider DNS per emettere un certificato."
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:453
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:457
 msgid ""
-"The challenge alias to use for ALL domains. See https://github.com/acmesh-"
-"official/acme.sh/wiki/DNS-alias-mode for the details of this process. LUCI "
-"only supports one challenge alias per certificate."
+"The challenge alias to use for ALL domains. See %s for the details of this "
+"process. LUCI only supports one challenge alias per certificate."
 msgstr ""
 "L'alias challenge da usare per TUTTI i domini. Per i dettagli di questo "
-"processo vedi https://github.com/acmesh-official/acme.sh/wiki/DNS-alias-"
-"mode . LUCI supporta solo un alias challenge per certificato."
+"processo vedi %s. LUCI supporta solo un alias challenge per certificato."
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:445
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:447
 msgid ""
-"The credentials for the DNS API mode selected above. See https://github.com/"
-"acmesh-official/acme.sh/wiki/dnsapi for the format of credentials required "
-"by each API. Add multiple entries here in KEY=VAL shell variable format to "
-"supply multiple credential variables."
+"The credentials for the DNS API mode selected above. See %s for the format "
+"of credentials required by each API. Add multiple entries here in KEY=VAL "
+"shell variable format to supply multiple credential variables."
 msgstr ""
 "Le credenziali per la modalità API DNS selezionata sopra. Per il formato "
-"delle credenziali richieste da ciascuna API vedi https://github.com/acmesh-"
-"official/acme.sh/wiki/dnsapi . Aggiungi più voci qui nel formato variabile "
-"shell CHIAVE=VALORE per fornire variabili credenziali multiple."
+"delle credenziali richieste da ciascuna API vedi %s. Aggiungi più voci qui "
+"nel formato variabile shell CHIAVE=VALORE per fornire variabili credenziali "
+"multiple."
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:460
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:466
 msgid ""
-"The domain alias to use for ALL domains. See https://github.com/acmesh-"
-"official/acme.sh/wiki/DNS-alias-mode for the details of this process. LUCI "
-"only supports one challenge domain per certificate."
+"The domain alias to use for ALL domains. See %s for the details of this "
+"process. LUCI only supports one challenge domain per certificate."
 msgstr ""
 "L'alias di dominio da usare per TUTTI i domini. Per i dettagli di questo "
-"processo vedi https://github.com/acmesh-official/acme.sh/wiki/DNS-alias-"
-"mode . LUCI supporta solo un dominio challenge per certificato."
+"processo vedi %s. LUCI supporta solo un dominio challenge per certificato."
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:381
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:383
 msgid "The private API signing key in PEM format"
 msgstr "Chiave di autenticazione API privata in formato PEM"
 
@@ -293,31 +288,30 @@ msgstr ""
 "certificati può richiedere del tempo. Controlla i registri eventi per "
 "verificare lo stato di avanzamento e gli eventuali errori."
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:297
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:299
 msgid "This is usually NOT an email address"
 msgstr "Solitamente NON è un indirizzo email"
 
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:88
 msgid ""
 "To use DNS mode to issue certificates, set this to the name of a DNS API "
-"supported by acme.sh. See https://github.com/acmesh-official/acme.sh/wiki/"
-"dnsapi for the list of available APIs. In DNS mode, the domain name does not "
-"have to resolve to the router IP. DNS mode is also the only mode that "
-"supports wildcard certificates. Using this mode requires the acme-dnsapi "
-"package to be installed."
+"supported by acme.sh. See %s for the list of available APIs. In DNS mode, "
+"the domain name does not have to resolve to the router IP. DNS mode is also "
+"the only mode that supports wildcard certificates. Using this mode requires "
+"the acme-dnsapi package to be installed."
 msgstr ""
 "Per usare la modalità DNS per emettere certificati, impostalo sul nome di "
 "un'API DNS supportata da acme.sh. Per l'elenco delle API disponibili vedi "
-"https://github.com/acmesh-official/acme.sh/wiki/dnsapi . In modalità DNS, il "
-"nome di dominio non deve essere risolto nell'IP del router. La modalità DNS "
-"è anche l'unica modalità che supporta i certificati con caratteri jolly. "
-"L'uso di questa modalità richiede l'installazione del pacchetto acme-dnsapi."
+"%s . In modalità DNS, il nome di dominio non deve essere risolto nell'IP del "
+"router. La modalità DNS è anche l'unica modalità che supporta i certificati "
+"con caratteri jolly. L'uso di questa modalità richiede l'installazione del "
+"pacchetto acme-dnsapi."
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:516
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:524
 msgid "Use a custom CA instead of Let's Encrypt."
 msgstr "Usa una CA personalizzata invece di Let's Encrypt."
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:474
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:482
 msgid "Use staging server"
 msgstr "Usa server di prova"
 
@@ -325,7 +319,7 @@ msgstr "Usa server di prova"
 msgid "Validation method"
 msgstr "Metodo validazione"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:466
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:474
 msgid "Wait for DNS update"
 msgstr ""
 

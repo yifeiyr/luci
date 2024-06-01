@@ -86,10 +86,12 @@ return view.extend({
 
 		o = s.taboption('challenge_dns', form.ListValue, 'dns', _('DNS API'),
 			_("To use DNS mode to issue certificates, set this to the name of a DNS API supported by acme.sh. " +
-				"See https://github.com/acmesh-official/acme.sh/wiki/dnsapi for the list of available APIs. " +
+				'See %s for the list of available APIs. ' +
 				"In DNS mode, the domain name does not have to resolve to the router IP. " +
 				"DNS mode is also the only mode that supports wildcard certificates. " +
-				"Using this mode requires the acme-dnsapi package to be installed."));
+				"Using this mode requires the acme-dnsapi package to be installed.")
+				.format('<a href="https://github.com/acmesh-official/acme.sh/wiki/dnsapi" target="_blank">DNS API</a>')
+		);
 		o.depends("validation_method", "dns");
 		// List of supported DNS API. Names are same as file names in acme.sh for easier search.
 		// May be outdated but not changed too often.
@@ -443,23 +445,29 @@ return view.extend({
 
 		o = s.taboption('challenge_dns', form.DynamicList, 'credentials', _('DNS API credentials'),
 			_("The credentials for the DNS API mode selected above. " +
-				"See https://github.com/acmesh-official/acme.sh/wiki/dnsapi for the format of credentials required by each API. " +
-				"Add multiple entries here in KEY=VAL shell variable format to supply multiple credential variables."))
+				'See %s for the format of credentials required by each API. ' +
+				'Add multiple entries here in KEY=VAL shell variable format to supply multiple credential variables.')
+				.format('<a href="https://github.com/acmesh-official/acme.sh/wiki/dnsapi" target="_blank">DNS API</a>')
+		)
 		o.datatype = "list(string)";
 		o.depends("validation_method", "dns");
 		o.modalonly = true;
 
 		o = s.taboption('challenge_dns', form.Value, 'calias', _('Challenge Alias'),
 			_("The challenge alias to use for ALL domains. " +
-				"See https://github.com/acmesh-official/acme.sh/wiki/DNS-alias-mode for the details of this process. " +
-				"LUCI only supports one challenge alias per certificate."));
+				'See %s for the details of this process. ' +
+				'LUCI only supports one challenge alias per certificate.')
+				.format('<a href="https://github.com/acmesh-official/acme.sh/wiki/DNS-alias-mode" target="_blank">DNS Alias Mode</a>')
+		);
 		o.depends("validation_method", "dns");
 		o.modalonly = true;
 
 		o = s.taboption('challenge_dns', form.Value, 'dalias', _('Domain Alias'),
 			_("The domain alias to use for ALL domains. " +
-				"See https://github.com/acmesh-official/acme.sh/wiki/DNS-alias-mode for the details of this process. " +
-				"LUCI only supports one challenge domain per certificate."));
+				'See %s for the details of this process. ' +
+				'LUCI only supports one challenge domain per certificate.')
+				.format('<a href="https://github.com/acmesh-official/acme.sh/wiki/DNS-alias-mode" target="_blank">DNS Alias Mode</a>')
+		);
 		o.depends("validation_method", "dns");
 		o.modalonly = true;
 
