@@ -18,6 +18,7 @@ return view.extend({
 			}),
 			L.resolveDefault(fs.stat('/usr/lib/acme/client/dnsapi'), null),
 			fs.lines('/proc/sys/kernel/hostname'),
+			L.resolveDefault(uci.load('ddns')),
 		]);
 	},
 
@@ -26,6 +27,7 @@ return view.extend({
 		let hasDnsApi = data[1] != null;
 		let hostname = data[2];
 		let systemDomain = _guessDomain(hostname);
+		let ddnsDomains = _collectDdnsDomains();
 		let wikiUrl = 'https://github.com/acmesh-official/acme.sh/wiki/';
 		var wikiInstructionUrl = wikiUrl + 'dnsapi';
 		var m, s, o;
@@ -57,6 +59,28 @@ return view.extend({
 
 		o = s.option(form.Flag, "debug", _("Enable debug logging"));
 		o.rmempty = false;
+
+		if (ddnsDomains) {
+			let ddnsDomainsList = [];
+			for (let ddnsDomain of ddnsDomains) {
+				ddnsDomainsList.push(ddnsDomain.domains[0]);
+			}
+			o = s.option(form.Button, '_import_ddns');
+			o.title = _('Found DDNS domains');
+			o.inputtitle = _('Import') + ': ' + ddnsDomainsList.join();
+			o.inputstyle = 'apply';
+			o.onclick = function () {
+				for (let ddnsDomain of ddnsDomains) {
+					let sectionId = uci.add('acme', 'cert', ddnsDomain.name);
+					uci.set('acme', sectionId, 'domains', ddnsDomain.domains);
+					uci.set('acme', sectionId, 'validation_method', 'dns');
+					uci.set('acme', sectionId, 'dns', ddnsDomain.dnsApi);
+					uci.set('acme', sectionId, 'credentials', ddnsDomain.credentials);
+				}
+				uci.save();
+				window.location.reload();
+			};
+		}
 
 		s = m.section(form.GridSection, "cert", _("Certificate config"))
 		s.anonymous = false;
@@ -594,6 +618,50 @@ function _guessDomain(hostname) {
 	return _isFqdn(hostname) ? hostname : (_isFqdn(window.location.hostname) ? window.location.hostname : '');
 }
 
+function _collectDdnsDomains() {
+	let ddnsDomains = [];
+	let ddnsServices = uci.sections('ddns', 'service');
+	for (let ddnsService of ddnsServices) {
+		let dnsApi = '';
+		let credentials = [];
+		switch (ddnsService.service_name) {
+			case 'duckdns.org':
+				dnsApi = 'dns_duckdns';
+				credentials = [
+					'DuckDNS_Token=' + ddnsService['password'],
+				];
+				break;
+			case 'dynv6.com':
+				dnsApi = 'dns_dynv6';
+				credentials = [
+					'DYNV6_TOKEN=' + ddnsService['password'],
+				];
+				break;
+			case 'afraid.org-v2-basic':
+				dnsApi = 'dns_freedns';
+				credentials = [
+					'FREEDNS_User=' + ddnsService['username'],
+					'FREEDNS_Password=' + ddnsService['password'],
+				];
+				break;
+			case 'cloudflare.com-v4':
+				dnsApi = 'dns_cf';
+				credentials = [
+					'CF_Token=' + ddnsService['password'],
+				];
+				break;
+		}
+		if (credentials.length > 0) {
+			ddnsDomains.push({
+				name: ddnsService['.name'],
+				domains: [ddnsService['domain']],
+				dnsApi: dnsApi,
+				credentials: credentials,
+			});
+		}
+	}
+	return ddnsDomains;
+}
 
 function _addDnsProviderField(s, provider, env, title, desc) {
 	let o = s.taboption('challenge_dns', form.Value, '_' + env, _(title),
