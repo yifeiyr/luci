@@ -307,8 +307,8 @@ msgstr ""
 "acme-dnsapi esteja instalado."
 
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:527
-msgid "Use a custom CA instead of Let's Encrypt."
-msgstr "Use uma CA customizada em vez do Let's Encrypt."
+msgid "Use a custom CA."
+msgstr "Use uma CA customizada."
 
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:485
 msgid "Use staging server"

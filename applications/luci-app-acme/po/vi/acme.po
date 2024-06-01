@@ -296,8 +296,8 @@ msgstr ""
 "yêu cầu phải cài đặt gói acme-dnsapi."
 
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:527
-msgid "Use a custom CA instead of Let's Encrypt."
-msgstr "Sử dụng tùy chỉnh nhà cung cấp chứng chỉ thay cho Let's Encrypt."
+msgid "Use a custom CA."
+msgstr "Sử dụng tùy chỉnh nhà cung cấp chứng chỉ."
 
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:485
 msgid "Use staging server"

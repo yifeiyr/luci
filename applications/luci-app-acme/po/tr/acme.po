@@ -307,8 +307,8 @@ msgstr ""
 "paketinin yüklenmesini gerektirir."
 
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:527
-msgid "Use a custom CA instead of Let's Encrypt."
-msgstr "Let's Encrypt yerine özel bir CA kullanın."
+msgid "Use a custom CA."
+msgstr "Özel bir CA kullanın."
 
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:485
 msgid "Use staging server"

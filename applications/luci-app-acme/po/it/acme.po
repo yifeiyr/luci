@@ -309,8 +309,8 @@ msgstr ""
 "pacchetto acme-dnsapi."
 
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:527
-msgid "Use a custom CA instead of Let's Encrypt."
-msgstr "Usa una CA personalizzata invece di Let's Encrypt."
+msgid "Use a custom CA."
+msgstr "Usa una CA personalizzata."
 
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:485
 msgid "Use staging server"
