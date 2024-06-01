@@ -262,8 +262,8 @@ msgstr ""
 
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:26
 msgid ""
-"This configures ACME (Letsencrypt) automatic certificate installation. "
-"Simply fill out this to have the router configured with Letsencrypt-issued "
+"This configures ACME automatic certificate installation. "
+"Simply fill out this to have the router configured with issued "
 "certificates for the web interface. Note that the domain names in the "
 "certificate must already be configured to point at the router's public IP "
 "address. Once configured, issuing certificates can take a while. Check the "

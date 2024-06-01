@@ -23,8 +23,8 @@ return view.extend({
 		var m, s, o;
 
 		m = new form.Map("acme", _("ACME certificates"),
-			_("This configures ACME (Letsencrypt) automatic certificate installation. " +
-				"Simply fill out this to have the router configured with Letsencrypt-issued " +
+			_("This configures ACME automatic certificate installation. " +
+				"Simply fill out this to have the router configured with issued " +
 				"certificates for the web interface. " +
 				"Note that the domain names in the certificate must already be configured to " +
 				"point at the router's public IP address. " +
