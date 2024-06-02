@@ -103,7 +103,7 @@ return view.extend({
 		o.value('standalone', _('Standalone'));
 		o.value('webroot', _('Webroot'));
 		o.value('dns', _('DNS'));
-		o.default = 'webroot';
+		o.default = 'standalone';
 
 		if (!hasDnsApi) {
 			let opkgPackage = 'acme-acmesh-dnsapi';
