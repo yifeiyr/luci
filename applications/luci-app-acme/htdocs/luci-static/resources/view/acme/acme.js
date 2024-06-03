@@ -127,10 +127,13 @@ return view.extend({
 			o.default = [systemDomain];
 		}
 		o.validate = function (section_id, value) {
-			if (!/^[*a-z0-9.-]*$/.test(value)) {
-				return _('Invalid domain');
+			if (!value) {
+				return true;
 			}
-			if (value.includes('*')) {
+			if (!/^[*a-z0-9][a-z0-9.-]*$/.test(value)) {
+				return _('Invalid domain. Allowed lowercase a-z, numbers and hyphen -');
+			}
+			if (value.startsWith('*')) {
 				let method = this.section.children.filter(function (o) { return o.option == 'validation_method'; })[0].formvalue(section_id);
 				if (method && method !== 'dns') {
 					return _('A domain name with wildcard * available only when the Validation Method: DNS');
