@@ -39,11 +39,11 @@ return view.extend({
 				"Note that the domain names in the certificate must already be configured to " +
 				"point at the router's public IP address. " +
 				"Once configured, issuing certificates can take a while. " +
-				"Check the logs for progress and any errors.") + '<br/>' +
-				_('You can sign certificates for free with:') + '<br/>' +
-				'<a href="https://LetsEncrypt.org/" target="_blank">LetsEncrypt</a> ' + _('Default') + '<br/>' +
-				'<a href="https://ZeroSSL.com/" target="_blank">ZeroSSL</a> ' + '<br/>' +
-				_("Cert files are stored in") + ' <em>/etc/ssl/acme</em>' + '<br/>' +
+				"Check the logs for progress and any errors.") + '<br />' +
+				_('You can sign certificates for free with:') + '<br />' +
+				'<a href="https://LetsEncrypt.org/" target="_blank">LetsEncrypt</a> ' + _('Default') + '<br />' +
+				'<a href="https://ZeroSSL.com/" target="_blank">ZeroSSL</a> ' + '<br />' +
+				_("Cert files are stored in") + ' <em>/etc/ssl/acme</em>' + '<br />' +
 				'<a href="https://openwrt.org/docs/guide-user/services/tls/acmesh" target="_blank">' + _('See more') + '</a>'
 		);
 
@@ -51,7 +51,7 @@ return view.extend({
 		s.anonymous = true;
 
 		o = s.option(form.Value, "account_email", _("Account email"),
-			_('Email address to associate with account key.') + '<br/>' +
+			_('Email address to associate with account key.') + '<br />' +
 			_('If a certificate wasn\'t renewed in time then you\'ll receive a notice at 20 days before expiry.')
 		)
 		o.rmempty = false;
@@ -142,7 +142,7 @@ return view.extend({
 		o = s.taboption('challenge_webroot', form.Value, 'webroot', _('Webroot directory'),
 			_("Webserver root directory. Set this to the webserver " +
 				"document root to run Acme in webroot mode. The web " +
-				"server must be accessible from the internet on port 80.") + '<br/>' +
+				"server must be accessible from the internet on port 80.") + '<br />' +
 			_("Default") + " <em>/var/run/acme/challenge/</em>"
 		);
 		o.optional = true;
