@@ -17,7 +17,7 @@ return view.extend({
 				return certs;
 			}),
 			L.resolveDefault(fs.stat('/usr/lib/acme/client/dnsapi'), null),
-			fs.lines('/proc/sys/kernel/hostname'),
+			L.resolveDefault(fs.lines('/proc/sys/kernel/hostname'), ''),
 			L.resolveDefault(uci.load('ddns')),
 		]);
 	},

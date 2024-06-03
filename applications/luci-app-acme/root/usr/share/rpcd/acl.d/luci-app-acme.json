@@ -4,6 +4,7 @@
                 "read": {
                         "cgi-io": [ "exec" ],
                         "file": {
+                                "/proc/sys/kernel/hostname": [ "read" ],
                                 "/etc/ssl/acme": [ "list" ],
                                 "/sbin/logread -e acme": [ "exec" ],
                                 "/usr/sbin/logread -e acme": [ "exec" ]
