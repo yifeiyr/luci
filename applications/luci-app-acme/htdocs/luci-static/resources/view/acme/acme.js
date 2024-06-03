@@ -41,8 +41,8 @@ return view.extend({
 				"Once configured, issuing certificates can take a while. " +
 				"Check the logs for progress and any errors.") + '<br/>' +
 				_('You can sign certificates for free with:') + '<br/>' +
-				'<a href="https://ZeroSSL.com/" target="_blank">ZeroSSL</a> ' + _('Default') + '<br/>' +
-				'<a href="https://LetsEncrypt.org/" target="_blank">LetsEncrypt</a> ' + '<br/>' +
+				'<a href="https://LetsEncrypt.org/" target="_blank">LetsEncrypt</a> ' + _('Default') + '<br/>' +
+				'<a href="https://ZeroSSL.com/" target="_blank">ZeroSSL</a> ' + '<br/>' +
 				_("Cert files are stored in") + ' <em>/etc/ssl/acme</em>' + '<br/>' +
 				'<a href="https://openwrt.org/docs/guide-user/services/tls/acmesh" target="_blank">' + _('See more') + '</a>'
 		);
@@ -587,7 +587,8 @@ return view.extend({
 
 		o = s.taboption('advanced', form.Value, "acme_server", _("ACME server URL"),
 			_('Use a custom CA.') +	' ' + _('Custom ACME server directory URL.') + '<br />' +
-			'<a href="https://github.com/acmesh-official/acme.sh/wiki/Server" target="_blank">' + _('See more') + '</a>'
+			'<a href="https://github.com/acmesh-official/acme.sh/wiki/Server" target="_blank">' + _('See more') + '</a>' + '<br />'
+			+ _('Default') + '<code>letsencrypt</code>'
 		);
 		o.depends("staging", "0");
 		o.placeholder = "https://api.buypass.com/acme/directory";
