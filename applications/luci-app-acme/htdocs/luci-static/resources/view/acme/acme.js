@@ -616,7 +616,7 @@ return view.extend({
 
 function _isFqdn(domain) {
 	// Is not an IP i.e. starts from alphanumeric and has least one dot
-	return /[a-z0-9-]\..*$/.test(domain);
+	return /[a-z0-9-]\..*$/.test(domain) && !/[0-9-]\..*$/.test(domain);
 }
 
 function _guessDomain(hostname) {
