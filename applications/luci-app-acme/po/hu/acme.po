@@ -20,19 +20,19 @@ msgstr ""
 msgid "ACME certificates"
 msgstr "ACME tanúsítványok"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:50
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:47
 msgid "ACME global config"
 msgstr "ACME globális beállítás"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:588
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:579
 msgid "ACME server URL"
 msgstr "ACME szerver URL"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:53
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:50
 msgid "Account email"
 msgstr "Fiók e-mail"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:93
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:90
 #, fuzzy
 msgid "Advanced Settings"
 msgstr "Haladó Beállítások"
@@ -41,15 +41,15 @@ msgstr "Haladó Beállítások"
 msgid "Base64 content of private key. Use instead of YC_SA_Key_File_Path"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:46
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:43
 msgid "Cert files are stored in"
 msgstr "Ahol a tanúsítványok és egyéb állapotfájlok tárolva vannak."
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:85
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:82
 msgid "Certificate config"
 msgstr "Tanúsítvány beállítása"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:734
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:736
 msgid "Certificates"
 msgstr ""
 
@@ -61,11 +61,11 @@ msgstr "Kihívás álneve"
 msgid "Configure"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:589
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:580
 msgid "Custom ACME server directory URL."
 msgstr "Testreszabott ACME szerver könyvtár URL."
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:105
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:102
 msgid "DNS"
 msgstr "DNS"
 
@@ -77,16 +77,16 @@ msgstr "DNS API"
 msgid "DNS API credentials"
 msgstr "DNS API hitelesítési adatok"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:92
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:89
 msgid "DNS Challenge Validation"
 msgstr "DNS Kihívás érvényesítése"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:597
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:599
 msgid "Days until renewal"
 msgstr "Napok megújításig"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:44
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:146
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:582
 msgid "Default"
 msgstr "Alapértelmezett"
 
@@ -94,11 +94,11 @@ msgstr "Alapértelmezett"
 msgid "Domain Alias"
 msgstr "Tartományálnév"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:121
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:118
 msgid "Domain names"
 msgstr "Tartománynevek"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:122
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:119
 msgid ""
 "Domain names to include in the certificate. The first name will be the "
 "subject name, subsequent names will be alt names. Note that all domain names "
@@ -114,35 +114,35 @@ msgid ""
 "code>"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:562
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:553
 msgid "ECC 256 bits"
 msgstr "256 bites ECC"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:563
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:554
 msgid "ECC 384 bits"
 msgstr "384 bites ECC"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:54
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:51
 msgid "Email address to associate with account key."
 msgstr "A fiók kulcsához rendelendő e-mail cím."
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:60
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:57
 msgid "Enable debug logging"
 msgstr "Hibakeresési naplózás engedélyezése"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:95
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:92
 msgid "Enabled"
 msgstr "Engedélyezve"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:69
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:66
 msgid "Found DDNS domains"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:90
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:87
 msgid "General Settings"
 msgstr "Általános Beállítások"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:549
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:590
 msgid ""
 "Get certificate from the Letsencrypt staging server (use for testing; the "
 "certificate won't be valid)."
@@ -154,33 +154,33 @@ msgstr ""
 msgid "Grant UCI access for luci-app-acme"
 msgstr "UCI hozzáférés megadása a luci-app-acme alkalmazásnak"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:55
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:52
 msgid ""
 "If a certificate wasn't renewed in time then you'll receive a notice at 20 "
 "days before expiry."
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:70
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:67
 msgid "Import"
 msgstr "Importálás"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:113
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:110
 msgid "Install package %s"
 msgstr "Csomag telepítése %s"
 
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:131
-msgid "Invalid domain"
+msgid "Invalid domain. Allowed lowercase a-z, numbers and hyphen -"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:716
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:718
 msgid "Issued on"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:557
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:548
 msgid "Key size (and type) for the generated certificate."
 msgstr "Kulcsméret (és típus) az előállított tanúsítványhoz."
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:556
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:547
 msgid "Key type"
 msgstr "Kulcsméret"
 
@@ -188,7 +188,7 @@ msgstr "Kulcsméret"
 msgid "Log View"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:713
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:715
 msgid "Main Domain"
 msgstr ""
 
@@ -205,7 +205,7 @@ msgid ""
 "Open <a href=\"https://www.duckdns.org/\">DuckDNS</a> and copy a token here"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:112
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:109
 msgid "Package is not installed"
 msgstr "A csomag nincs telepítve"
 
@@ -213,23 +213,23 @@ msgstr "A csomag nincs telepítve"
 msgid "Path to private API signing key file in PEM format"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:714
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:716
 msgid "Private Key"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:715
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:717
 msgid "Public Certificate"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:559
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:550
 msgid "RSA 2048 bits"
 msgstr "2048 bites RSA"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:560
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:551
 msgid "RSA 3072 bits"
 msgstr "3072 bites RSA"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:561
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:552
 msgid "RSA 4096 bits"
 msgstr "4096 bites RSA"
 
@@ -241,9 +241,9 @@ msgstr ""
 msgid "See instructions"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:47
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:44
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:541
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:590
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:581
 msgid "See more"
 msgstr ""
 
@@ -251,11 +251,11 @@ msgstr ""
 msgid "Should point to the tenancy home region"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:103
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:100
 msgid "Standalone"
 msgstr "Önálló"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:99
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:96
 msgid ""
 "Standalone mode will use the built-in webserver of acme.sh to issue a "
 "certificate. Webroot mode will use an existing webserver to issue a "
@@ -336,15 +336,15 @@ msgstr ""
 "altartományokra is kibővített tanúsítványokat. Ezen mód használatához az "
 "szükséges, hogy az acme-dnsapi csomag telepítve legyen."
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:589
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:580
 msgid "Use a custom CA."
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:547
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:588
 msgid "Use staging server"
 msgstr "Előkészítő kiszolgáló használata"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:98
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:95
 msgid "Validation method"
 msgstr ""
 
@@ -352,11 +352,11 @@ msgstr ""
 msgid "Wait for DNS update"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:104
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:101
 msgid "Webroot"
 msgstr "Webroot"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:91
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:88
 msgid "Webroot Challenge Validation"
 msgstr "Webroot Kihívás érvényesítése"
 
@@ -373,10 +373,6 @@ msgstr ""
 "A webkiszolgáló gyökérkönyvtára. Állítsa be ezt a webkiszolgáló "
 "dokumentumgyökerére az ACME webgyökér módban történő futtatásához. A "
 "webkiszolgálónak elérhetőnek kell lennie az internetről a 80-as porton."
-
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:43
-msgid "You can sign certificates for free with:"
-msgstr ""
 
 #~ msgid "Custom ACME CA"
 #~ msgstr "Egyéni ACME CA"

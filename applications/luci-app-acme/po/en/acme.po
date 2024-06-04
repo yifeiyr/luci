@@ -20,19 +20,19 @@ msgstr ""
 msgid "ACME certificates"
 msgstr "ACME certificates"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:50
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:47
 msgid "ACME global config"
 msgstr "ACME global config"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:588
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:579
 msgid "ACME server URL"
 msgstr "ACME server URL"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:53
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:50
 msgid "Account email"
 msgstr "Account email"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:93
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:90
 msgid "Advanced Settings"
 msgstr "Advanced Settings"
 
@@ -42,15 +42,15 @@ msgstr ""
 "Base64 content of private key. Use instead of YC_SA_Key_File_Path (Yandex "
 "Cloud Service Account Key File Path)"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:46
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:43
 msgid "Cert files are stored in"
 msgstr "Certificate files are stored in"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:85
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:82
 msgid "Certificate config"
 msgstr "Certificate configuration"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:734
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:736
 msgid "Certificates"
 msgstr "Certificates"
 
@@ -62,11 +62,11 @@ msgstr "Challenge Alias"
 msgid "Configure"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:589
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:580
 msgid "Custom ACME server directory URL."
 msgstr "Custom ACME server directory URL"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:105
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:102
 msgid "DNS"
 msgstr "DNS (Domain Name System)"
 
@@ -78,16 +78,16 @@ msgstr "DNS API"
 msgid "DNS API credentials"
 msgstr "DNS API credentials"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:92
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:89
 msgid "DNS Challenge Validation"
 msgstr "DNS Challenge Validation"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:597
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:599
 msgid "Days until renewal"
 msgstr "Days until renewal"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:44
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:146
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:582
 msgid "Default"
 msgstr "Default"
 
@@ -95,11 +95,11 @@ msgstr "Default"
 msgid "Domain Alias"
 msgstr "Domain Alias"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:121
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:118
 msgid "Domain names"
 msgstr "Domain names"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:122
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:119
 msgid ""
 "Domain names to include in the certificate. The first name will be the "
 "subject name, subsequent names will be alt names. Note that all domain names "
@@ -117,37 +117,37 @@ msgstr ""
 "E.g. <code>_acme-challenge.example.com:12345:98765 alias.example.com:11111</"
 "code>"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:562
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:553
 #, fuzzy
 msgid "ECC 256 bits"
 msgstr "ECC (Elliptic Curve) 256 bit Encryption"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:563
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:554
 #, fuzzy
 msgid "ECC 384 bits"
 msgstr "ECC (Elliptic Curve) 384 bit Encryption"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:54
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:51
 msgid "Email address to associate with account key."
 msgstr "Email address to associate with account key."
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:60
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:57
 msgid "Enable debug logging"
 msgstr "Enable debug logging"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:95
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:92
 msgid "Enabled"
 msgstr "Enabled"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:69
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:66
 msgid "Found DDNS domains"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:90
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:87
 msgid "General Settings"
 msgstr "General Settings"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:549
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:590
 msgid ""
 "Get certificate from the Letsencrypt staging server (use for testing; the "
 "certificate won't be valid)."
@@ -159,7 +159,7 @@ msgstr ""
 msgid "Grant UCI access for luci-app-acme"
 msgstr "Grant UCI access for luci-app-acme"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:55
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:52
 msgid ""
 "If a certificate wasn't renewed in time then you'll receive a notice at 20 "
 "days before expiry."
@@ -167,27 +167,27 @@ msgstr ""
 "If a certificate wasn't renewed in time then you'll receive a notice at 20 "
 "days before expiry."
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:70
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:67
 msgid "Import"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:113
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:110
 msgid "Install package %s"
 msgstr ""
 
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:131
-msgid "Invalid domain"
+msgid "Invalid domain. Allowed lowercase a-z, numbers and hyphen -"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:716
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:718
 msgid "Issued on"
 msgstr "Issued on"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:557
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:548
 msgid "Key size (and type) for the generated certificate."
 msgstr "Key size (and type) for the generated certificate."
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:556
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:547
 msgid "Key type"
 msgstr "Key type"
 
@@ -195,7 +195,7 @@ msgstr "Key type"
 msgid "Log View"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:713
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:715
 msgid "Main Domain"
 msgstr "Main Domain"
 
@@ -218,7 +218,7 @@ msgid ""
 msgstr ""
 "Open <a href=\"https://www.duckdns.org/\">DuckDNS</a> and copy a token here"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:112
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:109
 msgid "Package is not installed"
 msgstr ""
 
@@ -226,24 +226,24 @@ msgstr ""
 msgid "Path to private API signing key file in PEM format"
 msgstr "Path to private API signing key file in PEM format"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:714
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:716
 #, fuzzy
 msgid "Private Key"
 msgstr "Private Key"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:715
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:717
 msgid "Public Certificate"
 msgstr "Public Certificate"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:559
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:550
 msgid "RSA 2048 bits"
 msgstr "RSA 2048 bit Encryption"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:560
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:551
 msgid "RSA 3072 bits"
 msgstr "RSA 3072 bit Encryption"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:561
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:552
 msgid "RSA 4096 bits"
 msgstr "RSA 4096 bit Encryption"
 
@@ -255,9 +255,9 @@ msgstr ""
 msgid "See instructions"
 msgstr "See instructions"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:47
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:44
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:541
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:590
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:581
 msgid "See more"
 msgstr ""
 
@@ -265,11 +265,11 @@ msgstr ""
 msgid "Should point to the tenancy home region"
 msgstr "Should point to the tenancy home region"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:103
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:100
 msgid "Standalone"
 msgstr "Standalone"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:99
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:96
 msgid ""
 "Standalone mode will use the built-in webserver of acme.sh to issue a "
 "certificate. Webroot mode will use an existing webserver to issue a "
@@ -345,15 +345,15 @@ msgstr ""
 "the only mode that supports wildcard certificates. Using this mode requires "
 "the acme-dnsapi package to be installed."
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:589
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:580
 msgid "Use a custom CA."
 msgstr "Use a custom CA (Certificate Authority)."
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:547
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:588
 msgid "Use staging server"
 msgstr "Use a staging server"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:98
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:95
 msgid "Validation method"
 msgstr "Validation method"
 
@@ -361,11 +361,11 @@ msgstr "Validation method"
 msgid "Wait for DNS update"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:104
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:101
 msgid "Webroot"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:91
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:88
 msgid "Webroot Challenge Validation"
 msgstr "Webroot Challenge Validation"
 
@@ -382,10 +382,6 @@ msgstr ""
 "Webserver root directory. Set this to the webserver document root to run "
 "Acme in webroot mode. The web server must be accessible from the internet on "
 "port 80."
-
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:43
-msgid "You can sign certificates for free with:"
-msgstr ""
 
 #, fuzzy
 #~ msgid "Custom ACME CA"
