@@ -648,7 +648,7 @@ function _collectDdnsDomains() {
 		if (credentials.length > 0) {
 			ddnsDomains.push({
 				sectionId: ddnsService['.name'],
-				domains: [ddnsService['domain']],
+				domains: [ddnsService['domain'], '*.' + ddnsService['domain']],
 				dnsApi: dnsApi,
 				credentials: credentials,
 			});
