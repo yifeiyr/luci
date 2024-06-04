@@ -695,7 +695,7 @@ function _extractParamValue(paramsKeyVals, paramName) {
 	for (let i = 0; i < paramsKeyVals.length; i++) {
 		var paramKeyVal = paramsKeyVals[i];
 		var parts = paramKeyVal.split('=');
-		if (parts.lenght < 2) {
+		if (parts.length < 2) {
 			continue;
 		}
 		var name = parts[0];
