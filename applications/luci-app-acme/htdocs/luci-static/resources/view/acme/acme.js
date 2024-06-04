@@ -67,15 +67,7 @@ return view.extend({
 			o.inputtitle = _('Import') + ': ' + ddnsDomainsList.join();
 			o.inputstyle = 'apply';
 			o.onclick = function () {
-				for (let ddnsDomain of ddnsDomains) {
-					let sectionId = uci.add('acme', 'cert', ddnsDomain.name);
-					uci.set('acme', sectionId, 'domains', ddnsDomain.domains);
-					uci.set('acme', sectionId, 'validation_method', 'dns');
-					uci.set('acme', sectionId, 'dns', ddnsDomain.dnsApi);
-					uci.set('acme', sectionId, 'credentials', ddnsDomain.credentials);
-				}
-				uci.save();
-				window.location.reload();
+				_importDdns(ddnsDomains);
 			};
 		}
 
@@ -655,7 +647,7 @@ function _collectDdnsDomains() {
 		}
 		if (credentials.length > 0) {
 			ddnsDomains.push({
-				name: ddnsService['.name'],
+				sectionId: ddnsService['.name'],
 				domains: [ddnsService['domain']],
 				dnsApi: dnsApi,
 				credentials: credentials,
@@ -663,6 +655,45 @@ function _collectDdnsDomains() {
 		}
 	}
 	return ddnsDomains;
+}
+
+function _importDdns(ddnsDomains) {
+	alert(_('After import check the added domain certificate configurations.'));
+	let certSections = uci.sections('acme', 'cert');
+	let certSectionNames = new Map();
+	let certSectionDomains = new Map();
+	for (let s of certSections) {
+		certSectionNames.set(s['.name'], null);
+		if (s.domains) {
+			for (let d of s.domains) {
+				certSectionDomains.set(d, s['.name']);
+			}
+		}
+	}
+	console.log(certSections);
+	console.log(certSectionDomains);
+	for (let ddnsDomain of ddnsDomains) {
+		let sectionId = ddnsDomain.sectionId;
+		// ensure unique sectionId
+		if (certSectionNames.has(sectionId)) {
+			sectionId += '_' + new Date().getTime();
+		}
+		if (ddnsDomain.domains) {
+			for (let d of ddnsDomain.domains) {
+				let dupDomainSection = certSectionDomains.get(d);
+				if (dupDomainSection) {
+					alert(_('The domain %s in DDNS %s already was configured in %s. Please check it after the import.').format(d, sectionId, dupDomainSection));
+				}
+			}
+		}
+		uci.add('acme', 'cert', sectionId);
+		uci.set('acme', sectionId, 'domains', ddnsDomain.domains);
+		uci.set('acme', sectionId, 'validation_method', 'dns');
+		uci.set('acme', sectionId, 'dns', ddnsDomain.dnsApi);
+		uci.set('acme', sectionId, 'credentials', ddnsDomain.credentials);
+	}
+	uci.save();
+	window.location.reload();
 }
 
 function _addDnsProviderField(s, provider, env, title, desc) {

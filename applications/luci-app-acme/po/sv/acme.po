@@ -10,7 +10,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.1-dev\n"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:136
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:128
 msgid ""
 "A domain name with wildcard * available only when the Validation Method: DNS"
 msgstr ""
@@ -24,7 +24,7 @@ msgstr "ACME-certifikat"
 msgid "ACME global config"
 msgstr "Global konfiguration för ACME"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:579
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:571
 msgid "ACME server URL"
 msgstr "URL för ACME-servern"
 
@@ -32,11 +32,15 @@ msgstr "URL för ACME-servern"
 msgid "Account email"
 msgstr "E-postkonto"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:90
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:82
 msgid "Advanced Settings"
 msgstr "Avancerade inställningar"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:500
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:661
+msgid "After import check the added domain certificate configurations."
+msgstr ""
+
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:492
 msgid "Base64 content of private key. Use instead of YC_SA_Key_File_Path"
 msgstr ""
 "Base64-innehåll av den privata nyckeln. Använd istället för "
@@ -46,15 +50,15 @@ msgstr ""
 msgid "Cert files are stored in"
 msgstr "Där certifikat och andra tillståndsfiler sparas."
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:82
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:74
 msgid "Certificate config"
 msgstr "Konfiguration för certifikatet"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:736
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:767
 msgid "Certificates"
 msgstr "Certifikat"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:521
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:513
 msgid "Challenge Alias"
 msgstr "Alias för utmaningen"
 
@@ -62,44 +66,44 @@ msgstr "Alias för utmaningen"
 msgid "Configure"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:580
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:572
 msgid "Custom ACME server directory URL."
 msgstr "Anpassad URL för katalogen till ACME-servern."
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:102
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:94
 msgid "DNS"
 msgstr "DNS"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:152
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:144
 msgid "DNS API"
 msgstr "API för DNS"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:511
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:503
 msgid "DNS API credentials"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:89
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:81
 msgid "DNS Challenge Validation"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:599
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:591
 msgid "Days until renewal"
 msgstr "Dagar till förnyelse"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:146
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:582
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:138
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:574
 msgid "Default"
 msgstr "Standard"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:530
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:522
 msgid "Domain Alias"
 msgstr "Alias för domänen"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:118
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:110
 msgid "Domain names"
 msgstr "Domännamn"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:119
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:111
 msgid ""
 "Domain names to include in the certificate. The first name will be the "
 "subject name, subsequent names will be alt names. Note that all domain names "
@@ -109,7 +113,7 @@ msgstr ""
 "Efterföljande namn blir alternativa namn. Notera att alla domännamn måste "
 "peka på routern i den globala DNS:en."
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:477
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:469
 msgid ""
 "E.g. <code>_acme-challenge.example.com:12345:98765 alias.example.com:11111</"
 "code>"
@@ -117,11 +121,11 @@ msgstr ""
 "T.ex. <code>_acme-challenge.example.com:12345:98765 alias.example.com:11111</"
 "code>"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:553
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:545
 msgid "ECC 256 bits"
 msgstr "ECC 256 bitar"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:554
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:546
 msgid "ECC 384 bits"
 msgstr "ECC 384 bitar"
 
@@ -133,7 +137,7 @@ msgstr "E-postadress att koppla till kontonyckeln."
 msgid "Enable debug logging"
 msgstr "Aktivera logg för avlusning"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:92
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:84
 msgid "Enabled"
 msgstr "Aktiverad"
 
@@ -141,11 +145,11 @@ msgstr "Aktiverad"
 msgid "Found DDNS domains"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:87
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:79
 msgid "General Settings"
 msgstr "Generella inställningar"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:590
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:582
 msgid ""
 "Get certificate from the Letsencrypt staging server (use for testing; the "
 "certificate won't be valid)."
@@ -169,23 +173,23 @@ msgstr ""
 msgid "Import"
 msgstr "Importera"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:110
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:102
 msgid "Install package %s"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:131
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:123
 msgid "Invalid domain. Allowed lowercase a-z, numbers and hyphen -"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:718
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:749
 msgid "Issued on"
 msgstr "Utfärdades den"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:548
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:540
 msgid "Key size (and type) for the generated certificate."
 msgstr "Nyckelstorlek (och typ) för det genererade certifikatet."
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:547
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:539
 msgid "Key type"
 msgstr "Nyckelstorlek"
 
@@ -193,74 +197,74 @@ msgstr "Nyckelstorlek"
 msgid "Log View"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:715
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:746
 msgid "Main Domain"
 msgstr "Huvuddomän"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:436
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:428
 msgid "OCID of tenancy that contains the target DNS zone"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:439
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:431
 msgid "OCID of user with permission to add/remove records from zones"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:342
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:334
 msgid ""
 "Open <a href=\"https://www.duckdns.org/\">DuckDNS</a> and copy a token here"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:109
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:101
 msgid "Package is not installed"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:445
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:437
 msgid "Path to private API signing key file in PEM format"
 msgstr "Genväg till den privata API'ns signeringsnyckel i PEM-format"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:716
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:747
 msgid "Private Key"
 msgstr "Privat nyckel"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:717
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:748
 msgid "Public Certificate"
 msgstr "Publikt certifikat"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:550
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:542
 msgid "RSA 2048 bits"
 msgstr "RSA 2048 bitar"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:551
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:543
 msgid "RSA 3072 bits"
 msgstr "RSA 3072 bitar"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:552
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:544
 msgid "RSA 4096 bits"
 msgstr "RSA 4096 bitar"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:540
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:532
 msgid "Seconds to wait for a DNS record to be updated before continue."
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:303
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:295
 msgid "See instructions"
 msgstr "Läs instruktionerna"
 
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:44
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:541
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:581
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:533
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:573
 msgid "See more"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:442
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:434
 msgid "Should point to the tenancy home region"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:100
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:92
 msgid "Standalone"
 msgstr "Fristående"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:96
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:88
 msgid ""
 "Standalone mode will use the built-in webserver of acme.sh to issue a "
 "certificate. Webroot mode will use an existing webserver to issue a "
@@ -272,26 +276,32 @@ msgstr ""
 "att utfärda ett. DNS-lägen tillåter dig att använde din DNS-tjänsts DNS API "
 "för att utfärda ett certifikat."
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:522
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:514
 msgid ""
 "The challenge alias to use for ALL domains. See %s for the details of this "
 "process. LUCI only supports one challenge alias per certificate."
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:512
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:504
 msgid ""
 "The credentials for the DNS API mode selected above. See %s for the format "
 "of credentials required by each API. Add multiple entries here in KEY=VAL "
 "shell variable format to supply multiple credential variables."
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:531
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:685
+msgid ""
+"The domain %s in DDNS %s already was configured in %s. Please check it after "
+"the import."
+msgstr ""
+
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:523
 msgid ""
 "The domain alias to use for ALL domains. See %s for the details of this "
 "process. LUCI only supports one challenge domain per certificate."
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:448
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:440
 msgid "The private API signing key in PEM format"
 msgstr "Den privata API'ns signeringsnyckel i PEM-format"
 
@@ -305,11 +315,11 @@ msgid ""
 "errors."
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:364
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:356
 msgid "This is usually NOT an email address"
 msgstr "Det här är vanligtvis INTE en e-postadress"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:153
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:145
 msgid ""
 "To use DNS mode to issue certificates, set this to the name of a DNS API "
 "supported by acme.sh. See %s for the list of available APIs. In DNS mode, "
@@ -318,35 +328,35 @@ msgid ""
 "the acme-dnsapi package to be installed."
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:580
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:572
 msgid "Use a custom CA."
 msgstr "Använd en anpassad CA."
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:588
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:580
 msgid "Use staging server"
 msgstr "Använd iscensättningsserver"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:95
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:87
 msgid "Validation method"
 msgstr "Valideringsmetod"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:539
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:531
 msgid "Wait for DNS update"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:101
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:93
 msgid "Webroot"
 msgstr "Webbrot"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:88
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:80
 msgid "Webroot Challenge Validation"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:142
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:134
 msgid "Webroot directory"
 msgstr "Webbrotskatalog"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:143
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:135
 msgid ""
 "Webserver root directory. Set this to the webserver document root to run "
 "Acme in webroot mode. The web server must be accessible from the internet on "

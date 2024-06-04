@@ -10,7 +10,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Weblate 5.5.3\n"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:136
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:128
 msgid ""
 "A domain name with wildcard * available only when the Validation Method: DNS"
 msgstr ""
@@ -24,7 +24,7 @@ msgstr "ACME證書"
 msgid "ACME global config"
 msgstr "ACME 全域組態"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:579
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:571
 msgid "ACME server URL"
 msgstr "ACME 伺服器 URL"
 
@@ -32,11 +32,15 @@ msgstr "ACME 伺服器 URL"
 msgid "Account email"
 msgstr "電子郵件帳號"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:90
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:82
 msgid "Advanced Settings"
 msgstr "進階設定"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:500
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:661
+msgid "After import check the added domain certificate configurations."
+msgstr ""
+
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:492
 msgid "Base64 content of private key. Use instead of YC_SA_Key_File_Path"
 msgstr "私鑰的 Base64 內容。不使用 YC_SA_Key_File_Path"
 
@@ -44,15 +48,15 @@ msgstr "私鑰的 Base64 內容。不使用 YC_SA_Key_File_Path"
 msgid "Cert files are stored in"
 msgstr "儲存憑證和其他狀態檔的位置。"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:82
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:74
 msgid "Certificate config"
 msgstr "憑證組態"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:736
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:767
 msgid "Certificates"
 msgstr "憑證"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:521
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:513
 msgid "Challenge Alias"
 msgstr "Challenge 別名"
 
@@ -60,44 +64,44 @@ msgstr "Challenge 別名"
 msgid "Configure"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:580
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:572
 msgid "Custom ACME server directory URL."
 msgstr "自訂 ACME 伺服器的 URL。"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:102
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:94
 msgid "DNS"
 msgstr "DNS"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:152
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:144
 msgid "DNS API"
 msgstr "DNS API"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:511
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:503
 msgid "DNS API credentials"
 msgstr "DNS API 憑證"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:89
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:81
 msgid "DNS Challenge Validation"
 msgstr "DNS Challenge 驗證"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:599
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:591
 msgid "Days until renewal"
 msgstr "更新前的天數"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:146
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:582
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:138
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:574
 msgid "Default"
 msgstr "預設"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:530
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:522
 msgid "Domain Alias"
 msgstr "網域別名"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:118
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:110
 msgid "Domain names"
 msgstr "網域名稱"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:119
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:111
 msgid ""
 "Domain names to include in the certificate. The first name will be the "
 "subject name, subsequent names will be alt names. Note that all domain names "
@@ -106,7 +110,7 @@ msgstr ""
 "憑證包含的網域名稱；第一個域名將作為「主體名稱」，其他則為「主體備用名稱」。"
 "請注意：所有域名都必須在全域 DNS 中解析為路由器的 IP 位址。"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:477
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:469
 msgid ""
 "E.g. <code>_acme-challenge.example.com:12345:98765 alias.example.com:11111</"
 "code>"
@@ -114,11 +118,11 @@ msgstr ""
 "如<code>_acme-challenge.example.com:12345:98765 alias.example.com:11111</"
 "code>"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:553
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:545
 msgid "ECC 256 bits"
 msgstr "ECC（256 位元）"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:554
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:546
 msgid "ECC 384 bits"
 msgstr "ECC（384 位元）"
 
@@ -132,7 +136,7 @@ msgstr ""
 msgid "Enable debug logging"
 msgstr "啟用除錯日誌記錄"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:92
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:84
 msgid "Enabled"
 msgstr "啟用"
 
@@ -140,11 +144,11 @@ msgstr "啟用"
 msgid "Found DDNS domains"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:87
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:79
 msgid "General Settings"
 msgstr "一般設定"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:590
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:582
 msgid ""
 "Get certificate from the Letsencrypt staging server (use for testing; the "
 "certificate won't be valid)."
@@ -164,23 +168,23 @@ msgstr "如果憑證未及時續訂，您將在到期前 20 天收到通知。"
 msgid "Import"
 msgstr "匯入"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:110
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:102
 msgid "Install package %s"
 msgstr "安裝套件 %s"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:131
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:123
 msgid "Invalid domain. Allowed lowercase a-z, numbers and hyphen -"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:718
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:749
 msgid "Issued on"
 msgstr "簽發於"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:548
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:540
 msgid "Key size (and type) for the generated certificate."
 msgstr "產生憑證的金鑰大小（和型別）。"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:547
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:539
 msgid "Key type"
 msgstr "金鑰大小"
 
@@ -188,74 +192,74 @@ msgstr "金鑰大小"
 msgid "Log View"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:715
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:746
 msgid "Main Domain"
 msgstr "主域"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:436
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:428
 msgid "OCID of tenancy that contains the target DNS zone"
 msgstr "包含目標 DNS 區域租約的 OCID"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:439
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:431
 msgid "OCID of user with permission to add/remove records from zones"
 msgstr "有權在區域中新增/刪除記錄的使用者的 OCID"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:342
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:334
 msgid ""
 "Open <a href=\"https://www.duckdns.org/\">DuckDNS</a> and copy a token here"
 msgstr "打開 <a href=\"https://www.duckdns.org/\">DuckDNS</a> 並在此處複製權杖"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:109
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:101
 msgid "Package is not installed"
 msgstr "套件尚未安裝"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:445
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:437
 msgid "Path to private API signing key file in PEM format"
 msgstr "PEM 格式的私有 API 簽章金鑰檔案的路徑"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:716
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:747
 msgid "Private Key"
 msgstr "私鑰"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:717
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:748
 msgid "Public Certificate"
 msgstr "公共憑證"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:550
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:542
 msgid "RSA 2048 bits"
 msgstr "RSA（2048 位元）"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:551
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:543
 msgid "RSA 3072 bits"
 msgstr "RSA（3072 位元）"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:552
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:544
 msgid "RSA 4096 bits"
 msgstr "RSA（4096 位元）"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:540
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:532
 msgid "Seconds to wait for a DNS record to be updated before continue."
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:303
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:295
 msgid "See instructions"
 msgstr "查看說明"
 
 #: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:44
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:541
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:581
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:533
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:573
 msgid "See more"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:442
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:434
 msgid "Should point to the tenancy home region"
 msgstr "應指向租約區域"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:100
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:92
 msgid "Standalone"
 msgstr "獨立"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:96
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:88
 msgid ""
 "Standalone mode will use the built-in webserver of acme.sh to issue a "
 "certificate. Webroot mode will use an existing webserver to issue a "
@@ -266,7 +270,7 @@ msgstr ""
 "用現存的 Web 伺服器，「DNS 模式」允許您使用 DNS 服務提供者的 DNS API 來頒發憑"
 "證。"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:522
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:514
 msgid ""
 "The challenge alias to use for ALL domains. See %s for the details of this "
 "process. LUCI only supports one challenge alias per certificate."
@@ -274,7 +278,7 @@ msgstr ""
 "所有網域使用的 Challenge 別名；請參閱 %s 以獲得行程的詳細資訊。LuCI 僅支援每"
 "個憑證擁有唯一 Challenge 別名。"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:512
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:504
 msgid ""
 "The credentials for the DNS API mode selected above. See %s for the format "
 "of credentials required by each API. Add multiple entries here in KEY=VAL "
@@ -283,7 +287,13 @@ msgstr ""
 "上面已選擇 DNS API 的憑證；請參閱 %s 以獲得每個 API 所需的憑證格式。要提供多"
 "個憑證變數，請輸入格式為 KEY=VAL 的多個項目。"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:531
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:685
+msgid ""
+"The domain %s in DDNS %s already was configured in %s. Please check it after "
+"the import."
+msgstr ""
+
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:523
 msgid ""
 "The domain alias to use for ALL domains. See %s for the details of this "
 "process. LUCI only supports one challenge domain per certificate."
@@ -291,7 +301,7 @@ msgstr ""
 "所有網域使用的網域別名；請參閱 %s 以獲得該行程的詳細資訊。LuCI 僅支援每個憑證"
 "擁有唯一網域別名。"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:448
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:440
 msgid "The private API signing key in PEM format"
 msgstr "PEM 格式的私有 API 簽章金鑰"
 
@@ -309,11 +319,11 @@ msgstr ""
 "Let's Encrypt 頒發的憑證。請注意：憑證中的域名必須指向路由器公共 IP 位址。配"
 "置完成後憑證的頒發需要一段時間，請檢視日誌來取得其進展和任何錯誤。"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:364
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:356
 msgid "This is usually NOT an email address"
 msgstr "這通常不是電子郵件地址"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:153
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:145
 msgid ""
 "To use DNS mode to issue certificates, set this to the name of a DNS API "
 "supported by acme.sh. See %s for the list of available APIs. In DNS mode, "
@@ -326,35 +336,35 @@ msgstr ""
 "援「萬用字元憑證」的唯一模式。請注意：必須安裝 acme-dnsapi 套件後才能使用該模"
 "式。"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:580
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:572
 msgid "Use a custom CA."
 msgstr "使用自訂 CA。"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:588
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:580
 msgid "Use staging server"
 msgstr "使用臨時伺服器"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:95
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:87
 msgid "Validation method"
 msgstr "驗證方法"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:539
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:531
 msgid "Wait for DNS update"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:101
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:93
 msgid "Webroot"
 msgstr "Webroot"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:88
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:80
 msgid "Webroot Challenge Validation"
 msgstr "Webroot Challenge 驗證"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:142
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:134
 msgid "Webroot directory"
 msgstr "Webroot 目錄"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:143
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:135
 msgid ""
 "Webserver root directory. Set this to the webserver document root to run "
 "Acme in webroot mode. The web server must be accessible from the internet on "
