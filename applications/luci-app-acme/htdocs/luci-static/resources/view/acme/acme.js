@@ -5,39 +5,50 @@
 'require view';
 
 return view.extend({
-	load: function() {
-		return L.resolveDefault(fs.list('/etc/ssl/acme/'), []).then(function(entries) {
-			var certs = [];
-			for (var i = 0; i < entries.length; i++) {
-				if (entries[i].type == 'file' && entries[i].name.match(/\.key$/)) {
-					certs.push(entries[i]);
+	load: function () {
+		return Promise.all([
+			L.resolveDefault(fs.list('/etc/ssl/acme/'), []).then(function (entries) {
+				var certs = [];
+				for (var i = 0; i < entries.length; i++) {
+					if (entries[i].type == 'file' && entries[i].name.match(/\.key$/)) {
+						certs.push(entries[i]);
+					}
 				}
-			}
-			return certs;
-		});
+				return certs;
+			}),
+			L.resolveDefault(fs.stat('/usr/lib/acme/client/dnsapi'), null),
+			L.resolveDefault(fs.lines('/proc/sys/kernel/hostname'), ''),
+			L.resolveDefault(uci.load('ddns')),
+		]);
 	},
 
-	render: function (certs) {
+	render: function (data) {
+		let certs = data[0];
+		let hasDnsApi = data[1] != null;
+		let hostname = data[2];
+		let systemDomain = _guessDomain(hostname);
+		let ddnsDomains = _collectDdnsDomains();
 		let wikiUrl = 'https://github.com/acmesh-official/acme.sh/wiki/';
 		var wikiInstructionUrl = wikiUrl + 'dnsapi';
 		var m, s, o;
 
 		m = new form.Map("acme", _("ACME certificates"),
-			_("This configures ACME (Letsencrypt) automatic certificate installation. " +
-				"Simply fill out this to have the router configured with Letsencrypt-issued " +
+			_("This configures ACME automatic certificate installation. " +
+				"Simply fill out this to have the router configured with issued " +
 				"certificates for the web interface. " +
 				"Note that the domain names in the certificate must already be configured to " +
 				"point at the router's public IP address. " +
 				"Once configured, issuing certificates can take a while. " +
-				"Check the logs for progress and any errors.") + '<br/>' +
-				_("Cert files are stored in") + ' <em>/etc/ssl/acme<em>'
+				"Check the logs for progress and any errors.") + '<br />' +
+				_("Cert files are stored in") + ' <em>/etc/ssl/acme</em>' + '<br />' +
+				'<a href="https://openwrt.org/docs/guide-user/services/tls/acmesh" target="_blank">' + _('See more') + '</a>'
 		);
 
 		s = m.section(form.TypedSection, "acme", _("ACME global config"));
 		s.anonymous = true;
 
 		o = s.option(form.Value, "account_email", _("Account email"),
-			_('Email address to associate with account key.') + '<br/>' +
+			_('Email address to associate with account key.') + '<br />' +
 			_('If a certificate wasn\'t renewed in time then you\'ll receive a notice at 20 days before expiry.')
 		)
 		o.rmempty = false;
@@ -45,6 +56,20 @@ return view.extend({
 
 		o = s.option(form.Flag, "debug", _("Enable debug logging"));
 		o.rmempty = false;
+
+		if (ddnsDomains) {
+			let ddnsDomainsList = [];
+			for (let ddnsDomain of ddnsDomains) {
+				ddnsDomainsList.push(ddnsDomain.domains[0]);
+			}
+			o = s.option(form.Button, '_import_ddns');
+			o.title = _('Found DDNS domains');
+			o.inputtitle = _('Import') + ': ' + ddnsDomainsList.join();
+			o.inputstyle = 'apply';
+			o.onclick = function () {
+				_importDdns(ddnsDomains);
+			};
+		}
 
 		s = m.section(form.GridSection, "cert", _("Certificate config"))
 		s.anonymous = false;
@@ -59,25 +84,57 @@ return view.extend({
 		o = s.taboption('general', form.Flag, "enabled", _("Enabled"));
 		o.rmempty = false;
 
+		o = s.taboption('general', form.ListValue, 'validation_method', _('Validation method'),
+			_('Standalone mode will use the built-in webserver of acme.sh to issue a certificate. ' +
+				'Webroot mode will use an existing webserver to issue a certificate. ' +
+				'DNS mode will allow you to use the DNS API of your DNS provider to issue a certificate.')
+		);
+		o.value('standalone', _('Standalone'));
+		o.value('webroot', _('Webroot'));
+		o.value('dns', _('DNS'));
+		o.default = 'standalone';
+
+		if (!hasDnsApi) {
+			let opkgPackage = 'acme-acmesh-dnsapi';
+			o = s.taboption('general', form.Button, '_install');
+			o.depends('validation_method', 'dns');
+			o.title = _('Package is not installed');
+			o.inputtitle = _('Install package %s').format(opkgPackage);
+			o.inputstyle = 'apply';
+			o.onclick = function () {
+				window.open(L.url('admin/system/opkg') +
+					'?query=' + opkgPackage, '_blank', 'noopener');
+			};
+		}
+
 		o = s.taboption('general', form.DynamicList, "domains", _("Domain names"),
 			_("Domain names to include in the certificate. " +
 				"The first name will be the subject name, subsequent names will be alt names. " +
 				"Note that all domain names must point at the router in the global DNS."));
 		o.datatype = "list(string)";
-
-		o = s.taboption('general', form.ListValue, 'validation_method', _('Validation method'),
-			_("Standalone mode will use the built-in webserver of acme.sh to issue a certificate. " +
-			"Webroot mode will use an existing webserver to issue a certificate. " +
-			"DNS mode will allow you to use the DNS API of your DNS provider to issue a certificate."));
-		o.value("standalone", _("Standalone"));
-		o.value("webroot", _("Webroot"));
-		o.value("dns", _("DNS"));
-		o.default = 'webroot';
+		if (systemDomain) {
+			o.default = [systemDomain];
+		}
+		o.validate = function (section_id, value) {
+			if (!value) {
+				return true;
+			}
+			if (!/^[*a-z0-9][a-z0-9.-]*$/.test(value)) {
+				return _('Invalid domain. Allowed lowercase a-z, numbers and hyphen -');
+			}
+			if (value.startsWith('*')) {
+				let method = this.section.children.filter(function (o) { return o.option == 'validation_method'; })[0].formvalue(section_id);
+				if (method && method !== 'dns') {
+					return _('wildcards * require Validation method: DNS');
+				}
+			}
+			return true;
+		};
 
 		o = s.taboption('challenge_webroot', form.Value, 'webroot', _('Webroot directory'),
 			_("Webserver root directory. Set this to the webserver " +
 				"document root to run Acme in webroot mode. The web " +
-				"server must be accessible from the internet on port 80.") + '<br/>' +
+				"server must be accessible from the internet on port 80.") + '<br />' +
 			_("Default") + " <em>/var/run/acme/challenge/</em>"
 		);
 		o.optional = true;
@@ -86,10 +143,12 @@ return view.extend({
 
 		o = s.taboption('challenge_dns', form.ListValue, 'dns', _('DNS API'),
 			_("To use DNS mode to issue certificates, set this to the name of a DNS API supported by acme.sh. " +
-				"See https://github.com/acmesh-official/acme.sh/wiki/dnsapi for the list of available APIs. " +
+				'See %s for the list of available APIs. ' +
 				"In DNS mode, the domain name does not have to resolve to the router IP. " +
 				"DNS mode is also the only mode that supports wildcard certificates. " +
-				"Using this mode requires the acme-dnsapi package to be installed."));
+				"Using this mode requires the acme-dnsapi package to be installed.")
+				.format('<a href="https://github.com/acmesh-official/acme.sh/wiki/dnsapi" target="_blank">DNS API</a>')
+		);
 		o.depends("validation_method", "dns");
 		// List of supported DNS API. Names are same as file names in acme.sh for easier search.
 		// May be outdated but not changed too often.
@@ -443,35 +502,39 @@ return view.extend({
 
 		o = s.taboption('challenge_dns', form.DynamicList, 'credentials', _('DNS API credentials'),
 			_("The credentials for the DNS API mode selected above. " +
-				"See https://github.com/acmesh-official/acme.sh/wiki/dnsapi for the format of credentials required by each API. " +
-				"Add multiple entries here in KEY=VAL shell variable format to supply multiple credential variables."))
+				'See %s for the format of credentials required by each API. ' +
+				'Add multiple entries here in KEY=VAL shell variable format to supply multiple credential variables.')
+				.format('<a href="https://github.com/acmesh-official/acme.sh/wiki/dnsapi" target="_blank">DNS API</a>')
+		)
 		o.datatype = "list(string)";
 		o.depends("validation_method", "dns");
 		o.modalonly = true;
 
 		o = s.taboption('challenge_dns', form.Value, 'calias', _('Challenge Alias'),
 			_("The challenge alias to use for ALL domains. " +
-				"See https://github.com/acmesh-official/acme.sh/wiki/DNS-alias-mode for the details of this process. " +
-				"LUCI only supports one challenge alias per certificate."));
+				'See %s for the details of this process. ' +
+				'LUCI only supports one challenge alias per certificate.')
+				.format('<a href="https://github.com/acmesh-official/acme.sh/wiki/DNS-alias-mode" target="_blank">DNS Alias Mode</a>')
+		);
 		o.depends("validation_method", "dns");
 		o.modalonly = true;
 
 		o = s.taboption('challenge_dns', form.Value, 'dalias', _('Domain Alias'),
 			_("The domain alias to use for ALL domains. " +
-				"See https://github.com/acmesh-official/acme.sh/wiki/DNS-alias-mode for the details of this process. " +
-				"LUCI only supports one challenge domain per certificate."));
+				'See %s for the details of this process. ' +
+				'LUCI only supports one challenge domain per certificate.')
+				.format('<a href="https://github.com/acmesh-official/acme.sh/wiki/DNS-alias-mode" target="_blank">DNS Alias Mode</a>')
+		);
 		o.depends("validation_method", "dns");
 		o.modalonly = true;
 
-
-		o = s.taboption('advanced', form.Flag, 'staging', _('Use staging server'),
-			_(
-				'Get certificate from the Letsencrypt staging server ' +
-				'(use for testing; the certificate won\'t be valid).'
-			)
+		o = s.taboption('challenge_dns', form.Value, 'dns_wait', _('Wait for DNS update'),
+			_('Seconds to wait for a DNS record to be updated before continue.') + '<br />' +
+			'<a href="https://github.com/acmesh-official/acme.sh/wiki/dnssleep" target="_blank">' + _('See more') + '</a>'
 		);
-		o.rmempty = false;
+		o.depends('validation_method', 'dns');
 		o.modalonly = true;
+
 
 		o = s.taboption('advanced', form.ListValue, 'key_type', _('Key type'),
 			_('Key size (and type) for the generated certificate.')
@@ -506,15 +569,28 @@ return view.extend({
 		};
 
 		o = s.taboption('advanced', form.Value, "acme_server", _("ACME server URL"),
-			_('Use a custom CA instead of Let\'s Encrypt.') +	' ' + _('Custom ACME server directory URL.'));
-		o.depends("staging", "0");
+			_('Use a custom CA.') +	' ' + _('Custom ACME server directory URL.') + '<br />' +
+			'<a href="https://github.com/acmesh-official/acme.sh/wiki/Server" target="_blank">' + _('See more') + '</a>' + '<br />'
+			+ _('Default') + ' <code>letsencrypt</code>'
+		);
 		o.placeholder = "https://api.buypass.com/acme/directory";
+		o.optional = true;
+		o.modalonly = true;
+
+		o = s.taboption('advanced', form.Flag, 'staging', _('Use staging server'),
+			_(
+				'Get certificate from the Letsencrypt staging server ' +
+				'(use for testing; the certificate won\'t be valid).'
+			)
+		);
+		o.depends('acme_server', '');
+		o.depends('acme_server', 'letsencrypt');
 		o.optional = true;
 		o.modalonly = true;
 
 		o = s.taboption('advanced', form.Value, 'days', _('Days until renewal'));
 		o.optional    = true;
-		o.placeholder = 90;
+		o.placeholder = 60;
 		o.datatype    = 'uinteger';
 		o.modalonly = true;
 
@@ -527,6 +603,96 @@ return view.extend({
 	}
 })
 
+function _isFqdn(domain) {
+	// Is not an IP i.e. starts from alphanumeric and has least one dot
+	return /[a-z0-9-]\..*$/.test(domain) && !/[0-9-]\..*$/.test(domain);
+}
+
+function _guessDomain(hostname) {
+	return _isFqdn(hostname) ? hostname : (_isFqdn(window.location.hostname) ? window.location.hostname : '');
+}
+
+function _collectDdnsDomains() {
+	let ddnsDomains = [];
+	let ddnsServices = uci.sections('ddns', 'service');
+	for (let ddnsService of ddnsServices) {
+		let dnsApi = '';
+		let credentials = [];
+		switch (ddnsService.service_name) {
+			case 'duckdns.org':
+				dnsApi = 'dns_duckdns';
+				credentials = [
+					'DuckDNS_Token=' + ddnsService['password'],
+				];
+				break;
+			case 'dynv6.com':
+				dnsApi = 'dns_dynv6';
+				credentials = [
+					'DYNV6_TOKEN=' + ddnsService['password'],
+				];
+				break;
+			case 'afraid.org-v2-basic':
+				dnsApi = 'dns_freedns';
+				credentials = [
+					'FREEDNS_User=' + ddnsService['username'],
+					'FREEDNS_Password=' + ddnsService['password'],
+				];
+				break;
+			case 'cloudflare.com-v4':
+				dnsApi = 'dns_cf';
+				credentials = [
+					'CF_Token=' + ddnsService['password'],
+				];
+				break;
+		}
+		if (credentials.length > 0) {
+			ddnsDomains.push({
+				sectionId: ddnsService['.name'],
+				domains: [ddnsService['domain'], '*.' + ddnsService['domain']],
+				dnsApi: dnsApi,
+				credentials: credentials,
+			});
+		}
+	}
+	return ddnsDomains;
+}
+
+function _importDdns(ddnsDomains) {
+	alert(_('After import check the added domain certificate configurations.'));
+	let certSections = uci.sections('acme', 'cert');
+	let certSectionNames = new Map();
+	let certSectionDomains = new Map();
+	for (let s of certSections) {
+		certSectionNames.set(s['.name'], null);
+		if (s.domains) {
+			for (let d of s.domains) {
+				certSectionDomains.set(d, s['.name']);
+			}
+		}
+	}
+	for (let ddnsDomain of ddnsDomains) {
+		let sectionId = ddnsDomain.sectionId;
+		// ensure unique sectionId
+		if (certSectionNames.has(sectionId)) {
+			sectionId += '_' + new Date().getTime();
+		}
+		if (ddnsDomain.domains) {
+			for (let d of ddnsDomain.domains) {
+				let dupDomainSection = certSectionDomains.get(d);
+				if (dupDomainSection) {
+					alert(_('The domain %s in DDNS %s already was configured in %s. Please check it after the import.').format(d, sectionId, dupDomainSection));
+				}
+			}
+		}
+		uci.add('acme', 'cert', sectionId);
+		uci.set('acme', sectionId, 'domains', ddnsDomain.domains);
+		uci.set('acme', sectionId, 'validation_method', 'dns');
+		uci.set('acme', sectionId, 'dns', ddnsDomain.dnsApi);
+		uci.set('acme', sectionId, 'credentials', ddnsDomain.credentials);
+	}
+	uci.save();
+	window.location.reload();
+}
 
 function _addDnsProviderField(s, provider, env, title, desc) {
 	let o = s.taboption('challenge_dns', form.Value, '_' + env, _(title),
@@ -555,7 +721,7 @@ function _extractParamValue(paramsKeyVals, paramName) {
 	for (let i = 0; i < paramsKeyVals.length; i++) {
 		var paramKeyVal = paramsKeyVals[i];
 		var parts = paramKeyVal.split('=');
-		if (parts.lenght < 2) {
+		if (parts.length < 2) {
 			continue;
 		}
 		var name = parts[0];

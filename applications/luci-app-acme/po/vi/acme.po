@@ -10,88 +10,98 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 5.4-dev\n"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:25
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:128
+msgid ""
+"A domain name with wildcard * available only when the Validation Method: DNS"
+msgstr ""
+
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:35
 #: applications/luci-app-acme/root/usr/share/luci/menu.d/luci-app-acme.json:3
 msgid "ACME certificates"
 msgstr "Chứng chỉ ACME"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:36
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:47
 msgid "ACME global config"
 msgstr "Cấu hình ACME toàn cầu"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:514
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:571
 msgid "ACME server URL"
 msgstr "Đường dẫn máy chủ ACME"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:39
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:50
 msgid "Account email"
 msgstr "Tài khoản email"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:57
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:82
 msgid "Advanced Settings"
 msgstr "Cài đặt Nâng cao"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:433
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:661
+msgid "After import check the added domain certificate configurations."
+msgstr ""
+
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:492
 msgid "Base64 content of private key. Use instead of YC_SA_Key_File_Path"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:33
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:43
 msgid "Cert files are stored in"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:49
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:74
 msgid "Certificate config"
 msgstr "Cấu hình chứng chỉ"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:605
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:767
 msgid "Certificates"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:452
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:513
 msgid "Challenge Alias"
 msgstr "Bí danh"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:509
-msgid "Custom ACME CA"
-msgstr "Tùy chỉnh ACME CA"
+#: applications/luci-app-acme/root/usr/share/luci/menu.d/luci-app-acme.json:14
+msgid "Configure"
+msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:515
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:572
 msgid "Custom ACME server directory URL."
 msgstr "Tùy chỉnh đường dẫn máy chủ ACME."
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:74
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:94
 msgid "DNS"
 msgstr "DNS"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:87
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:144
 msgid "DNS API"
 msgstr "DNS API"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:444
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:503
 msgid "DNS API credentials"
 msgstr "Thông tin đăng nhập DNS API"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:56
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:81
 msgid "DNS Challenge Validation"
 msgstr "DNS Thẩm định"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:521
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:591
 msgid "Days until renewal"
 msgstr "Cho đến ngày được làm mới"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:81
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:138
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:574
 msgid "Default"
-msgstr ""
+msgstr "Default (Mặc định)"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:459
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:522
 msgid "Domain Alias"
 msgstr "Tên miền bí danh"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:62
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:110
 msgid "Domain names"
 msgstr "Tên miền"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:63
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:111
 msgid ""
 "Domain names to include in the certificate. The first name will be the "
 "subject name, subsequent names will be alt names. Note that all domain names "
@@ -101,37 +111,41 @@ msgstr ""
 "tiếp theo sẽ là tên thay thế. Lưu ý rằng tất cả các tên miền phải trỏ đến bộ "
 "định tuyến trong DNS."
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:410
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:469
 msgid ""
 "E.g. <code>_acme-challenge.example.com:12345:98765 alias.example.com:11111</"
 "code>"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:482
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:545
 msgid "ECC 256 bits"
 msgstr "ECC 256 bit"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:483
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:546
 msgid "ECC 384 bits"
 msgstr "ECC 384 bit"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:40
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:51
 msgid "Email address to associate with account key."
 msgstr "Tài khoản email phải được kết hợp với chìa khóa của tài khoản."
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:46
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:57
 msgid "Enable debug logging"
 msgstr "Kích hoạt nhật ký bug"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:59
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:84
 msgid "Enabled"
 msgstr "Kích Hoạt"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:54
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:66
+msgid "Found DDNS domains"
+msgstr ""
+
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:79
 msgid "General Settings"
 msgstr "Các cài đặt chung"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:469
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:582
 msgid ""
 "Get certificate from the Letsencrypt staging server (use for testing; the "
 "certificate won't be valid)."
@@ -143,78 +157,108 @@ msgstr ""
 msgid "Grant UCI access for luci-app-acme"
 msgstr "Cấp quyền truy cập cho luci-app-acme"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:41
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:52
 msgid ""
 "If a certificate wasn't renewed in time then you'll receive a notice at 20 "
 "days before expiry."
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:587
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:67
+msgid "Import"
+msgstr "Nhập"
+
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:102
+msgid "Install package %s"
+msgstr "Cài đặt gói %s"
+
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:123
+msgid "Invalid domain. Allowed lowercase a-z, numbers and hyphen -"
+msgstr ""
+
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:749
 msgid "Issued on"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:477
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:540
 msgid "Key size (and type) for the generated certificate."
 msgstr "Kích thước khóa cho chứng chỉ được tạo."
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:476
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:539
 msgid "Key type"
 msgstr "Kích thước khóa"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:584
+#: applications/luci-app-acme/root/usr/share/luci/menu.d/luci-app-acme.json:22
+msgid "Log View"
+msgstr ""
+
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:746
 msgid "Main Domain"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:369
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:428
 msgid "OCID of tenancy that contains the target DNS zone"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:372
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:431
 msgid "OCID of user with permission to add/remove records from zones"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:275
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:334
 msgid ""
 "Open <a href=\"https://www.duckdns.org/\">DuckDNS</a> and copy a token here"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:378
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:101
+msgid "Package is not installed"
+msgstr "Gói chưa được cài đặt"
+
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:437
 msgid "Path to private API signing key file in PEM format"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:585
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:747
 msgid "Private Key"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:586
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:748
 msgid "Public Certificate"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:479
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:542
 msgid "RSA 2048 bits"
 msgstr "RSA kích thước 2048 bits"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:480
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:543
 msgid "RSA 3072 bits"
 msgstr "RSA kích thước 3072 bits"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:481
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:544
 msgid "RSA 4096 bits"
 msgstr "RSA kích thước 4096 bits"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:236
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:532
+msgid "Seconds to wait for a DNS record to be updated before continue."
+msgstr ""
+
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:295
 msgid "See instructions"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:375
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:44
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:533
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:573
+msgid "See more"
+msgstr ""
+
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:434
 msgid "Should point to the tenancy home region"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:72
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:92
 msgid "Standalone"
 msgstr "Biệt lập"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:69
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:88
 msgid ""
 "Standalone mode will use the built-in webserver of acme.sh to issue a "
 "certificate. Webroot mode will use an existing webserver to issue a "
@@ -226,103 +270,105 @@ msgstr ""
 "sẽ cho phép bạn sử dụng API DNS của nhà cung cấp DNS của bạn để cấp chứng "
 "chỉ."
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:453
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:514
 msgid ""
-"The challenge alias to use for ALL domains. See https://github.com/acmesh-"
-"official/acme.sh/wiki/DNS-alias-mode for the details of this process. LUCI "
-"only supports one challenge alias per certificate."
+"The challenge alias to use for ALL domains. See %s for the details of this "
+"process. LUCI only supports one challenge alias per certificate."
 msgstr ""
-"Bí danh thử thách để sử dụng cho TẤT CẢ các miền. Xem https://github.com/"
-"acmesh-official/acme.sh/wiki/DNS-alias-mode để biết chi tiết về quy trình "
-"này. LUCI chỉ hỗ trợ một bí danh thách thức cho mỗi chứng chỉ."
+"Bí danh thử thách để sử dụng cho TẤT CẢ các miền. Xem %s để biết chi tiết về "
+"quy trình này. LUCI chỉ hỗ trợ một bí danh thách thức cho mỗi chứng chỉ."
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:445
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:504
 msgid ""
-"The credentials for the DNS API mode selected above. See https://github.com/"
-"acmesh-official/acme.sh/wiki/dnsapi for the format of credentials required "
-"by each API. Add multiple entries here in KEY=VAL shell variable format to "
-"supply multiple credential variables."
+"The credentials for the DNS API mode selected above. See %s for the format "
+"of credentials required by each API. Add multiple entries here in KEY=VAL "
+"shell variable format to supply multiple credential variables."
 msgstr ""
-"Thông tin đăng nhập cho chế độ API DNS đã chọn ở trên. Xem https://github."
-"com/acmesh-official/acme.sh/wiki/dnsapi để biết định dạng thông tin xác thực "
-"mà mỗi API yêu cầu. Thêm nhiều mục vào đây ở định dạng biến hệ vỏ KEY=VAL để "
-"cung cấp nhiều biến thông tin xác thực."
+"Thông tin đăng nhập cho chế độ API DNS đã chọn ở trên. Xem %s để biết định "
+"dạng thông tin xác thực mà mỗi API yêu cầu. Thêm nhiều mục vào đây ở định "
+"dạng biến hệ vỏ KEY=VAL để cung cấp nhiều biến thông tin xác thực."
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:460
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:685
 msgid ""
-"The domain alias to use for ALL domains. See https://github.com/acmesh-"
-"official/acme.sh/wiki/DNS-alias-mode for the details of this process. LUCI "
-"only supports one challenge domain per certificate."
+"The domain %s in DDNS %s already was configured in %s. Please check it after "
+"the import."
 msgstr ""
-"Bí danh tên miền để sử dụng cho TẤT CẢ tên miền. Xem https://github.com/"
-"acmesh-official/acme.sh/wiki/DNS-alias-mode để biết chi tiết về quy trình "
-"này. LUCI chỉ hỗ trợ một miền thử thách cho mỗi chứng chỉ."
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:381
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:523
+msgid ""
+"The domain alias to use for ALL domains. See %s for the details of this "
+"process. LUCI only supports one challenge domain per certificate."
+msgstr ""
+"Bí danh tên miền để sử dụng cho TẤT CẢ tên miền. Xem %s để biết chi tiết về "
+"quy trình này. LUCI chỉ hỗ trợ một miền thử thách cho mỗi chứng chỉ."
+
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:440
 msgid "The private API signing key in PEM format"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:26
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:36
 msgid ""
-"This configures ACME (Letsencrypt) automatic certificate installation. "
-"Simply fill out this to have the router configured with Letsencrypt-issued "
-"certificates for the web interface. Note that the domain names in the "
-"certificate must already be configured to point at the router's public IP "
-"address. Once configured, issuing certificates can take a while. Check the "
-"logs for progress and any errors."
+"This configures ACME automatic certificate installation. Simply fill out "
+"this to have the router configured with issued certificates for the web "
+"interface. Note that the domain names in the certificate must already be "
+"configured to point at the router's public IP address. Once configured, "
+"issuing certificates can take a while. Check the logs for progress and any "
+"errors."
 msgstr ""
-"Thao tác này sẽ định cấu hình cài đặt chứng chỉ tự động ACME (Letsencrypt). "
-"Chỉ cần điền vào phần này để cấu hình bộ định tuyến với các chứng chỉ do "
-"Letsencrypt cấp cho giao diện web. Lưu ý rằng các tên miền trong chứng chỉ "
-"phải được định cấu hình để trỏ đến địa chỉ IP công cộng của bộ định tuyến. "
-"Sau khi được định cấu hình, việc cấp chứng chỉ có thể mất một lúc. Kiểm tra "
-"nhật ký để biết tiến độ và bất kỳ lỗi nào."
+"Thao tác này sẽ định cấu hình cài đặt chứng chỉ tự động ACME. Chỉ cần điền "
+"vào phần này để cấu hình bộ định tuyến với các chứng chỉ do cấp cho giao "
+"diện web. Lưu ý rằng các tên miền trong chứng chỉ phải được định cấu hình để "
+"trỏ đến địa chỉ IP công cộng của bộ định tuyến. Sau khi được định cấu hình, "
+"việc cấp chứng chỉ có thể mất một lúc. Kiểm tra nhật ký để biết tiến độ và "
+"bất kỳ lỗi nào."
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:297
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:356
 msgid "This is usually NOT an email address"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:88
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:145
 msgid ""
 "To use DNS mode to issue certificates, set this to the name of a DNS API "
-"supported by acme.sh. See https://github.com/acmesh-official/acme.sh/wiki/"
-"dnsapi for the list of available APIs. In DNS mode, the domain name does not "
-"have to resolve to the router IP. DNS mode is also the only mode that "
-"supports wildcard certificates. Using this mode requires the acme-dnsapi "
-"package to be installed."
+"supported by acme.sh. See %s for the list of available APIs. In DNS mode, "
+"the domain name does not have to resolve to the router IP. DNS mode is also "
+"the only mode that supports wildcard certificates. Using this mode requires "
+"the acme-dnsapi package to be installed."
 msgstr ""
 "Để sử dụng chế độ DNS để cấp chứng chỉ, hãy đặt tên này thành tên của API "
-"DNS được acme.sh hỗ trợ. Xem https://github.com/acmesh-official/acme.sh/wiki/"
-"dnsapi để biết danh sách các API có sẵn. Trong chế độ DNS, tên miền không "
-"phải phân giải thành IP của bộ định tuyến. Chế độ DNS cũng là chế độ duy "
-"nhất hỗ trợ chứng chỉ ký tự đại diện. Sử dụng chế độ này yêu cầu phải cài "
-"đặt gói acme-dnsapi."
+"DNS được acme.sh hỗ trợ. Xem %s để biết danh sách các API có sẵn. Trong chế "
+"độ DNS, tên miền không phải phân giải thành IP của bộ định tuyến. Chế độ DNS "
+"cũng là chế độ duy nhất hỗ trợ chứng chỉ ký tự đại diện. Sử dụng chế độ này "
+"yêu cầu phải cài đặt gói acme-dnsapi."
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:509
-msgid "Use a custom CA instead of Let's Encrypt."
-msgstr "Sử dụng tùy chỉnh nhà cung cấp chứng chỉ thay cho Let's Encrypt."
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:572
+msgid "Use a custom CA."
+msgstr "Sử dụng tùy chỉnh nhà cung cấp chứng chỉ."
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:467
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:580
 msgid "Use staging server"
 msgstr "Sử dụng máy chủ tạm"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:68
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:87
 msgid "Validation method"
 msgstr "Phương thức thẩm định"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:73
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:531
+msgid "Wait for DNS update"
+msgstr ""
+
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:93
 msgid "Webroot"
 msgstr ""
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:55
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:80
 msgid "Webroot Challenge Validation"
 msgstr "Webroot Thẩm định"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:77
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:134
 msgid "Webroot directory"
 msgstr "Đường dẫn Webroot"
 
-#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme.js:78
+#: applications/luci-app-acme/htdocs/luci-static/resources/view/acme/acme.js:135
 msgid ""
 "Webserver root directory. Set this to the webserver document root to run "
 "Acme in webroot mode. The web server must be accessible from the internet on "
@@ -332,3 +378,5 @@ msgstr ""
 "chạy Acme ở chế độ gốc web. Máy chủ web phải có thể truy cập được từ "
 "internet trên cổng 80."
 
+#~ msgid "Custom ACME CA"
+#~ msgstr "Tùy chỉnh ACME CA"
