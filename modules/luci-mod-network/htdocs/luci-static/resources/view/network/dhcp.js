@@ -29,6 +29,18 @@ callDHCPLeases = rpc.declare({
 	expect: { '': {} }
 });
 
+var callNetworkDevices = rpc.declare({
+	object: 'luci-rpc',
+	method: 'getNetworkDevices',
+	expect: { '': {} }
+});
+
+var listServices = rpc.declare({
+	object: 'service',
+	method: 'list',
+	expect: { '': {} }
+});
+
 CBILeaseStatus = form.DummyValue.extend({
 	renderWidget: function(section_id, option_id, cfgvalue) {
 		return E([
@@ -278,6 +290,8 @@ return view.extend({
 			callDUIDHints(),
 			getDHCPPools(),
 			network.getNetworks(),
+			callNetworkDevices(),
+			listServices(),
 			uci.load('firewall')
 		]);
 	},
@@ -289,6 +303,9 @@ return view.extend({
 		    pools = hosts_duids_pools[2],
 		    networks = hosts_duids_pools[3],
 		    m, s, o, ss, so, dnss;
+
+		var devices  = Object.keys(L.toArray(hosts_duids_pools[4])[0]);
+		var services = Object.keys(L.toArray(hosts_duids_pools[5])[0]);
 
 		let noi18nstrings = {
 			etc_hosts: '<code>/etc/hosts</code>',
@@ -1188,6 +1205,17 @@ return view.extend({
 		so.rmempty = false;
 		so.optional = false;
 		so.placeholder = 'specialgateways';
+		so.validate = function(section, value) {
+			for (var i = 0, l = devices.length; i < l; i++) {
+				if (devices[i] == value)
+					return _('Tag name %s must not match any active device name').format(value);
+			}
+			for (var i = 0, l = services.length; i < l; i++) {
+				if (services[i] == value)
+					return _('Tag name %s must not match any service name').format(value);
+			}
+			return true;
+		};
 
 		so = ss.option(form.Flag, 'force',
 			_('Force'),
