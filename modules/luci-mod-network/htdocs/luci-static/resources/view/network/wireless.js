@@ -298,260 +298,299 @@ function add_dependency_permutations(o, deps) {
 		o.depends(res[i]);
 }
 
+// Define a class CBIWifiFrequencyValue that extends form.Value
 var CBIWifiFrequencyValue = form.Value.extend({
-	callFrequencyList: rpc.declare({
-		object: 'iwinfo',
-		method: 'freqlist',
-		params: [ 'device' ],
-		expect: { results: [] }
-	}),
+    // Declare an RPC method to get the frequency list for a given device
+    callFrequencyList: rpc.declare({
+        object: 'iwinfo',
+        method: 'freqlist',
+        params: ['device'],
+        expect: { results: [] }
+    }),
 
-	load: function(section_id) {
-		return Promise.all([
-			network.getWifiDevice(section_id),
-			this.callFrequencyList(section_id)
-		]).then(L.bind(function(data) {
-			this.channels = {
-				'2g': L.hasSystemFeature('hostapd', 'acs') ? [ 'auto', 'auto', true ] : [],
-				'5g': L.hasSystemFeature('hostapd', 'acs') ? [ 'auto', 'auto', true ] : [],
-				'6g': L.hasSystemFeature('hostapd', 'acs') ? [ 'auto', 'auto', true ] : [],
-				'60g': []
-			};
+    // Load method to fetch WiFi device details and frequency list
+    load: function(section_id) {
+        return Promise.all([
+            network.getWifiDevice(section_id), // Get WiFi device info
+            this.callFrequencyList(section_id) // Call frequency list
+        ]).then(L.bind(function(data) {
+            // Initialize channels for different bands
+            this.channels = {
+                '2g': L.hasSystemFeature('hostapd', 'acs') ? ['auto', 'auto', true] : [],
+                '5g': L.hasSystemFeature('hostapd', 'acs') ? ['auto', 'auto', true] : [],
+                '6g': L.hasSystemFeature('hostapd', 'acs') ? ['auto', 'auto', true] : [],
+                '60g': []
+            };
 
-			for (var i = 0; i < data[1].length; i++) {
-				if (!data[1][i].band)
-					continue;
+            // Populate channels based on the frequency data received
+            for (var i = 0; i < data[1].length; i++) {
+                if (!data[1][i].band) continue; // Skip if no band information
 
-				var band = '%dg'.format(data[1][i].band);
+                var band = '%dg'.format(data[1][i].band); // Format band string
 
-				this.channels[band].push(
-					data[1][i].channel,
-					'%d (%d Mhz)'.format(data[1][i].channel, data[1][i].mhz),
-					!data[1][i].restricted
-				);
-			}
+                this.channels[band].push(
+                    data[1][i].channel,
+                    '%d (%d Mhz)'.format(data[1][i].channel, data[1][i].mhz), // Channel details
+                    !data[1][i].restricted // Restricted status
+                );
+            }
 
-			var hwmodelist = L.toArray(data[0] ? data[0].getHWModes() : null)
-				.reduce(function(o, v) { o[v] = true; return o }, {});
+            // Create a list of hardware modes based on the device capabilities
+            var hwmodelist = L.toArray(data[0] ? data[0].getHWModes() : null)
+                .reduce(function(o, v) { o[v] = true; return o }, {});
 
-			this.modes = [
-				'', 'Legacy', hwmodelist.a || hwmodelist.b || hwmodelist.g,
-				'n', 'N', hwmodelist.n,
-				'ac', 'AC', L.hasSystemFeature('hostapd', '11ac') && hwmodelist.ac,
-				'ax', 'AX', L.hasSystemFeature('hostapd', '11ax') && hwmodelist.ax
-			];
+            // Define supported modes
+            this.modes = [
+                '', 'Legacy', hwmodelist.a || hwmodelist.b || hwmodelist.g,
+                'n', 'N', hwmodelist.n,
+                'ac', 'AC', L.hasSystemFeature('hostapd', '11ac') && hwmodelist.ac,
+                'ax', 'AX', L.hasSystemFeature('hostapd', '11ax') && hwmodelist.ax,
+                'be', 'BE', L.hasSystemFeature('hostapd', '11be') && hwmodelist.be
+            ];
 
-			var htmodelist = L.toArray(data[0] ? data[0].getHTModes() : null)
-				.reduce(function(o, v) { o[v] = true; return o }, {});
+            // Create a list of HT modes based on device capabilities
+            var htmodelist = L.toArray(data[0] ? data[0].getHTModes() : null)
+                .reduce(function(o, v) { o[v] = true; return o }, {});
 
-			this.htmodes = {
-				'': [ '', '-', true ],
-				'n': [
-					'HT20', '20 MHz', htmodelist.HT20,
-					'HT40', '40 MHz', htmodelist.HT40
-				],
-				'ac': [
-					'VHT20', '20 MHz', htmodelist.VHT20,
-					'VHT40', '40 MHz', htmodelist.VHT40,
-					'VHT80', '80 MHz', htmodelist.VHT80,
-					'VHT160', '160 MHz', htmodelist.VHT160
-				],
-				'ax': [
-					'HE20', '20 MHz', htmodelist.HE20,
-					'HE40', '40 MHz', htmodelist.HE40,
-					'HE80', '80 MHz', htmodelist.HE80,
-					'HE160', '160 MHz', htmodelist.HE160
-				]
-			};
+            // Define supported HT modes
+            this.htmodes = {
+                '': ['', '-', true],
+                'n': [
+                    'HT20', '20 MHz', htmodelist.HT20,
+                    'HT40', '40 MHz', htmodelist.HT40
+                ],
+                'ac': [
+                    'VHT20', '20 MHz', htmodelist.VHT20,
+                    'VHT40', '40 MHz', htmodelist.VHT40,
+                    'VHT80', '80 MHz', htmodelist.VHT80,
+                    'VHT160', '160 MHz', htmodelist.VHT160
+                ],
+                'ax': [
+                    'HE20', '20 MHz', htmodelist.HE20,
+                    'HE40', '40 MHz', htmodelist.HE40,
+                    'HE80', '80 MHz', htmodelist.HE80,
+                    'HE160', '160 MHz', htmodelist.HE160
+                ],
+                'be': [
+                    'EHT20', '20 MHz', htmodelist.EHT20,
+                    'EHT40', '40 MHz', htmodelist.EHT40,
+                    'EHT80', '80 MHz', htmodelist.EHT80,
+                    'EHT160', '160 MHz', htmodelist.EHT160,
+                    'EHT320', '320 MHz', htmodelist.EHT320
+                ]
+            };
 
-			this.bands = {
-				'': [
-					'2g', '2.4 GHz', this.channels['2g'].length > 3,
-					'5g', '5 GHz', this.channels['5g'].length > 3,
-					'60g', '60 GHz', this.channels['60g'].length > 0
-				],
-				'n': [
-					'2g', '2.4 GHz', this.channels['2g'].length > 3,
-					'5g', '5 GHz', this.channels['5g'].length > 3
-				],
-				'ac': [
-					'5g', '5 GHz', true
-				],
-				'ax': [
-					'2g', '2.4 GHz', this.channels['2g'].length > 3,
-					'5g', '5 GHz', this.channels['5g'].length > 3,
-					'6g', '6 GHz', this.channels['6g'].length > 3
-				]
-			};
-		}, this));
-	},
+            // Define available bands for widget selection based on channel availability
+			// AX and BE are available on 2/5/6G bands
+            this.bands = {
+                '': [
+                    '2g', '2.4 GHz', this.channels['2g'].length > 3,
+                    '5g', '5 GHz', this.channels['5g'].length > 3,
+                    '6g', '6 GHz', this.channels['6g'].length > 3,
+                    '60g', '60 GHz', this.channels['60g'].length > 0
+                ],
+                'n': [
+                    '2g', '2.4 GHz', this.channels['2g'].length > 3,
+                    '5g', '5 GHz', this.channels['5g'].length > 3
+                ],
+                'ac': [
+                    '5g', '5 GHz', true
+                ],
+                'ax': [
+                    '2g', '2.4 GHz', this.channels['2g'].length > 3,
+                    '5g', '5 GHz', this.channels['5g'].length > 3,
+                    '6g', '6 GHz', this.channels['6g'].length > 3
+                ],
+                'be': [
+                    '2g', '2.4 GHz', this.channels['2g'].length > 3,
+                    '5g', '5 GHz', this.channels['5g'].length > 3,
+                    '6g', '6 GHz', this.channels['6g'].length > 3
+                ],
+            };
+        }, this));
+    },
 
-	setValues: function(sel, vals) {
-		if (sel.vals)
-			sel.vals.selected = sel.selectedIndex;
+    // Set values in the select element
+    setValues: function(sel, vals) {
+        if (sel.vals) sel.vals.selected = sel.selectedIndex; // Save current selection
 
-		while (sel.options[0])
-			sel.remove(0);
+        while (sel.options[0]) sel.remove(0); // Clear existing options
 
-		for (var i = 0; vals && i < vals.length; i += 3)
-			if (vals[i+2])
-				sel.add(E('option', { value: vals[i+0] }, [ vals[i+1] ]));
+        // Add new options based on provided values
+        for (var i = 0; vals && i < vals.length; i += 3)
+            if (vals[i + 2]) // Check if the option is not restricted
+                sel.add(E('option', { value: vals[i + 0] }, [vals[i + 1]]));
 
-		if (vals && !isNaN(vals.selected))
-			sel.selectedIndex = vals.selected;
+        // Restore the previous selection
+        if (vals && !isNaN(vals.selected))
+            sel.selectedIndex = vals.selected;
 
-		sel.parentNode.style.display = (sel.options.length <= 1) ? 'none' : '';
-		sel.vals = vals;
-	},
+        sel.parentNode.style.display = (sel.options.length <= 1) ? 'none' : ''; // Hide if only one option
+        sel.vals = vals; // Store values for later reference
+    },
 
-	toggleWifiMode: function(elem) {
-		this.toggleWifiHTMode(elem);
-		this.toggleWifiBand(elem);
-	},
+    // Toggle WiFi mode selection
+    toggleWifiMode: function(elem) {
+        this.toggleWifiHTMode(elem);
+        this.toggleWifiBand(elem);
+    },
 
-	toggleWifiHTMode: function(elem) {
-		var mode = elem.querySelector('.mode');
-		var bwdt = elem.querySelector('.htmode');
+    // Update the HT mode based on the selected mode
+    toggleWifiHTMode: function(elem) {
+        var mode = elem.querySelector('.mode');
+        var bwdt = elem.querySelector('.htmode');
 
-		this.setValues(bwdt, this.htmodes[mode.value]);
-	},
+        this.setValues(bwdt, this.htmodes[mode.value]);
+    },
 
-	toggleWifiBand: function(elem) {
-		var mode = elem.querySelector('.mode');
-		var band = elem.querySelector('.band');
+    // Update the band selection based on the selected mode
+    toggleWifiBand: function(elem) {
+        var mode = elem.querySelector('.mode');
+        var band = elem.querySelector('.band');
 
-		this.setValues(band, this.bands[mode.value]);
-		this.toggleWifiChannel(elem);
+        this.setValues(band, this.bands[mode.value]);
+        this.toggleWifiChannel(elem); // Update available channels
+        this.map.checkDepends(); // Check dependencies for the UI
+    },
 
-		this.map.checkDepends();
-	},
+    // Update the channel selection based on the selected band
+    toggleWifiChannel: function(elem) {
+        var band = elem.querySelector('.band');
+        var chan = elem.querySelector('.channel');
 
-	toggleWifiChannel: function(elem) {
-		var band = elem.querySelector('.band');
-		var chan = elem.querySelector('.channel');
+        this.setValues(chan, this.channels[band.value]);
+    },
 
-		this.setValues(chan, this.channels[band.value]);
-	},
+    // Set initial values for the configuration elements
+    setInitialValues: function(section_id, elem) {
+        var mode = elem.querySelector('.mode'),
+            band = elem.querySelector('.band'),
+            chan = elem.querySelector('.channel'),
+            bwdt = elem.querySelector('.htmode'),
+            htval = uci.get('wireless', section_id, 'htmode'),
+            hwval = uci.get('wireless', section_id, 'hwmode'),
+            chval = uci.get('wireless', section_id, 'channel'),
+            bandval = uci.get('wireless', section_id, 'band');
 
-	setInitialValues: function(section_id, elem) {
-		var mode = elem.querySelector('.mode'),
-		    band = elem.querySelector('.band'),
-		    chan = elem.querySelector('.channel'),
-		    bwdt = elem.querySelector('.htmode'),
-		    htval = uci.get('wireless', section_id, 'htmode'),
-		    hwval = uci.get('wireless', section_id, 'hwmode'),
-		    chval = uci.get('wireless', section_id, 'channel'),
-		    bandval = uci.get('wireless', section_id, 'band');
+        this.setValues(mode, this.modes); // Set modes
 
-		this.setValues(mode, this.modes);
+        // Determine mode based on htmode value
+        if (/EHT20|EHT40|EHT80|EHT160|EHT320/.test(htval))
+            mode.value = 'be';
+        else if (/HE20|HE40|HE80|HE160/.test(htval))
+            mode.value = 'ax';
+        else if (/VHT20|VHT40|VHT80|VHT160/.test(htval))
+            mode.value = 'ac';
+        else if (/HT20|HT40/.test(htval))
+            mode.value = 'n';
+        else
+            mode.value = '';
 
-		if (/HE20|HE40|HE80|HE160/.test(htval))
-			mode.value = 'ax';
-		else if (/VHT20|VHT40|VHT80|VHT160/.test(htval))
-			mode.value = 'ac';
-		else if (/HT20|HT40/.test(htval))
-			mode.value = 'n';
-		else
-			mode.value = '';
+        this.toggleWifiMode(elem); // Update dependent selections
 
-		this.toggleWifiMode(elem);
+        // Determine initial band selection based on hwmode
+        if (hwval != null) {
+            this.useBandOption = false;
 
-		if (hwval != null) {
-			this.useBandOption = false;
+            if (mode.value === 'be') 
+                band.value = '6g';
+            else if (/a/.test(hwval))
+                band.value = '5g';
+            else
+                band.value = '2g';
+        } else {
+            this.useBandOption = true;
+            band.value = bandval; // Use provided band value
+        }
 
-			if (/a/.test(hwval))
-				band.value = '5g';
-			else
-				band.value = '2g';
-		}
-		else {
-			this.useBandOption = true;
+        this.toggleWifiBand(elem); // Update dependent selections
 
-			band.value = bandval;
-		}
+        bwdt.value = htval; // Set HT mode
+        chan.value = chval || (chan.options[0] ? chan.options[0].value : 'auto'); // Set channel
 
-		this.toggleWifiBand(elem);
+        return elem; // Return the element for further processing
+    },
 
-		bwdt.value = htval;
-		chan.value = chval || (chan.options[0] ? chan.options[0].value : 'auto');
+    // Render the widget for WiFi configuration
+    renderWidget: function(section_id, option_index, cfgvalue) {
+        var elem = E('div');
 
-		return elem;
-	},
+        // Create labels and select elements for mode, band, channel, and width
+        dom.content(elem, [
+            E('label', { 'style': 'float:left; margin-right:3px' }, [
+                _('Mode'), E('br'),
+                E('select', {
+                    'class': 'mode',
+                    'style': 'width:auto',
+                    'change': L.bind(this.toggleWifiMode, this, elem),
+                    'disabled': (this.disabled != null) ? this.disabled : this.map.readonly
+                })
+            ]),
+            E('label', { 'style': 'float:left; margin-right:3px' }, [
+                _('Band'), E('br'),
+                E('select', {
+                    'class': 'band',
+                    'style': 'width:auto',
+                    'change': L.bind(this.toggleWifiBand, this, elem),
+                    'disabled': (this.disabled != null) ? this.disabled : this.map.readonly
+                })
+            ]),
+            E('label', { 'style': 'float:left; margin-right:3px' }, [
+                _('Channel'), E('br'),
+                E('select', {
+                    'class': 'channel',
+                    'style': 'width:auto',
+                    'change': L.bind(this.map.checkDepends, this.map),
+                    'disabled': (this.disabled != null) ? this.disabled : this.map.readonly
+                })
+            ]),
+            E('label', { 'style': 'float:left; margin-right:3px' }, [
+                _('Width'), E('br'),
+                E('select', {
+                    'class': 'htmode',
+                    'style': 'width:auto',
+                    'change': L.bind(this.map.checkDepends, this.map),
+                    'disabled': (this.disabled != null) ? this.disabled : this.map.readonly
+                })
+            ]),
+            E('br', { 'style': 'clear:left' }) // Clear float
+        ]);
 
-	renderWidget: function(section_id, option_index, cfgvalue) {
-		var elem = E('div');
+        return this.setInitialValues(section_id, elem); // Initialize values for the widget
+    },
 
-		dom.content(elem, [
-			E('label', { 'style': 'float:left; margin-right:3px' }, [
-				_('Mode'), E('br'),
-				E('select', {
-					'class': 'mode',
-					'style': 'width:auto',
-					'change': L.bind(this.toggleWifiMode, this, elem),
-					'disabled': (this.disabled != null) ? this.disabled : this.map.readonly
-				})
-			]),
-			E('label', { 'style': 'float:left; margin-right:3px' }, [
-				_('Band'), E('br'),
-				E('select', {
-					'class': 'band',
-					'style': 'width:auto',
-					'change': L.bind(this.toggleWifiBand, this, elem),
-					'disabled': (this.disabled != null) ? this.disabled : this.map.readonly
-				})
-			]),
-			E('label', { 'style': 'float:left; margin-right:3px' }, [
-				_('Channel'), E('br'),
-				E('select', {
-					'class': 'channel',
-					'style': 'width:auto',
-					'change': L.bind(this.map.checkDepends, this.map),
-					'disabled': (this.disabled != null) ? this.disabled : this.map.readonly
-				})
-			]),
-			E('label', { 'style': 'float:left; margin-right:3px' }, [
-				_('Width'), E('br'),
-				E('select', {
-					'class': 'htmode',
-					'style': 'width:auto',
-					'change': L.bind(this.map.checkDepends, this.map),
-					'disabled': (this.disabled != null) ? this.disabled : this.map.readonly
-				})
-			]),
-			E('br', { 'style': 'clear:left' })
-		]);
+    // Retrieve configuration values from UCI for a given section
+    cfgvalue: function(section_id) {
+        return [
+            uci.get('wireless', section_id, 'htmode'),
+            uci.get('wireless', section_id, 'hwmode') || uci.get('wireless', section_id, 'band'),
+            uci.get('wireless', section_id, 'channel')
+        ];
+    },
 
-		return this.setInitialValues(section_id, elem);
-	},
+    // Retrieve form values for a given section
+    formvalue: function(section_id) {
+        var node = this.map.findElement('data-field', this.cbid(section_id));
 
-	cfgvalue: function(section_id) {
-		return [
-		    uci.get('wireless', section_id, 'htmode'),
-		    uci.get('wireless', section_id, 'hwmode') || uci.get('wireless', section_id, 'band'),
-		    uci.get('wireless', section_id, 'channel')
-		];
-	},
+        return [
+            node.querySelector('.htmode').value,
+            node.querySelector('.band').value,
+            node.querySelector('.channel').value
+        ];
+    },
 
-	formvalue: function(section_id) {
-		var node = this.map.findElement('data-field', this.cbid(section_id));
+    // Write configuration values back to UCI
+    write: function(section_id, value) {
+        uci.set('wireless', section_id, 'htmode', value[0] || null); // Set HT mode
 
-		return [
-		    node.querySelector('.htmode').value,
-		    node.querySelector('.band').value,
- 			node.querySelector('.channel').value
-		];
-	},
+        // Set band or hardware mode based on selection
+        if (this.useBandOption)
+            uci.set('wireless', section_id, 'band', value[1]);
+        else
+            uci.set('wireless', section_id, 'hwmode', (value[1] === '2g') ? '11g' : '11a');
 
-	write: function(section_id, value) {
-		uci.set('wireless', section_id, 'htmode', value[0] || null);
-
-		if (this.useBandOption)
-			uci.set('wireless', section_id, 'band', value[1]);
-		else
-			uci.set('wireless', section_id, 'hwmode', (value[1] == '2g') ? '11g' : '11a');
-
-		uci.set('wireless', section_id, 'channel', value[2]);
-	}
+        uci.set('wireless', section_id, 'channel', value[2]); // Set channel
+    }
 });
 
 var CBIWifiTxPowerValue = form.ListValue.extend({
